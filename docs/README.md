@@ -9,4 +9,4 @@
 
 ## 목차
 - [시작하기](getting_started) (원문: [Getting Started](https://scikit-learn.org/stable/getting_started.html))
-- [튜토리얼](tutorial/index) (원문: [Tutorial](https://scikit-learn.org/stable/tutorial/index.html))
+- [튜토리얼](tutorial) (원문: [Tutorial](https://scikit-learn.org/stable/tutorial/index.html))
