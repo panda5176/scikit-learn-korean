@@ -12,7 +12,7 @@
 
 학습 문제는 몇 가지 범주로 나뉩니다:
 
-- [지도 학습(supervised learning)](https://en.wikipedia.org/wiki/Supervised_learning)에서는, 우리가 예측하고자 하는 추가적인 속성이 데이터에 함께 제공됩니다(사이킷런 지도 학습 페이지로 가시려면 [여기](/supervised_learning)를 클릭하세요). 이 문제는 다음 중 하나일 수 있습니다.
+- [지도 학습(supervised learning)](https://en.wikipedia.org/wiki/Supervised_learning)에서는, 우리가 예측하고자 하는 추가적인 속성이 데이터에 함께 제공됩니다(사이킷런 지도 학습 페이지로 가시려면 [여기](supervised_learning)를 클릭하세요). 이 문제는 다음 중 하나일 수 있습니다.
   - [분류](https://en.wikipedia.org/wiki/Classification_in_machine_learning): 
 
 ## 예시 데이터셋 로딩
