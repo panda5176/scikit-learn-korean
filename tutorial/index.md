@@ -1,6 +1,8 @@
-# scikit-learn 튜토리얼
+원문: [scikit-learn Tutorials](https://scikit-learn.org/stable/tutorial/index.html)
 
-## [scikit-learn과 함께 하는 기계 학습 소개](/tutorial/basic/tutorial)
+# 사이킷런 튜토리얼
+
+## [사이킷런과 함께 하는 기계 학습 소개](/tutorial/basic/tutorial)
 
 ### - [기계 학습: 문제 설정](/tutorial/basic/tutorial#기계-학습:-문제-설정)
 ### - [예시 데이터셋 로딩](/tutorial/basic/tutorial#예시-데이터셋-로딩)
@@ -9,7 +11,7 @@
 
 ## [과학적인 데이터 처리를 위한 통계적 학습 튜토리얼](/tutorial/statistical_inference/index)
 
-### - [통계적 학습: scikit-learn에서의 설정과 추정기 객체](/tutorial/statistical_inference/settings)
+### - [통계적 학습: 사이킷런에서의 설정과 추정기 객체](/tutorial/statistical_inference/settings)
 ### - [지도 학습: 고차원 관측으로부터 출력 변수 예측하기](/tutorial/statistical_inference/supervised_learning)
 ### - [모델 선택: 추정기와 매개변수 선택하기](/tutorial/statistical_inference/model_selection)
 ### - [비지도 학습: 데이터 표현법 찾기](/tutorial/statistical_inference/unsupervised_learning)
