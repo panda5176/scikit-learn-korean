@@ -153,6 +153,6 @@ RandomizedSearchCV(estimator=RandomForestRegressor(random_state=0), n_iter=5,
 
 우리가 제공하는 모든 도구에 대한 자세한 설명은 [사용자 안내서](user_guide)를 참고하세요. [API 레퍼런스](modules/classes#API-레퍼런스)에서는 공개 API의 완전한 목록을 찾아볼 수 있습니다.
 
-또 다양한 상황에서 `scikit-learn`의 사용 방식을 묘사한 방대한 [예시들](auto_examples/index#일반적인-예시)도 있습니다.
+또 다양한 상황에서 `scikit-learn`의 사용 방식을 묘사한 방대한 [예시들](auto_examples#일반적인-예시)도 있습니다.
 
 [튜토리얼](tutorial)도 추가적인 공부할 거리를 담고 있습니다.
