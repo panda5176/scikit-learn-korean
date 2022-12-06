@@ -5,7 +5,7 @@
 ## [사이킷런과 함께 하는 기계 학습 소개](basic/tutorial)
 
 ### - [기계 학습: 문제 설정](basic/tutorial#기계-학습:-문제-설정)
-### - [예시 데이터셋 로딩](basic/tutorial#예시-데이터셋-로딩)
+### - [예시 데이터셋 불러오기](basic/tutorial#예시-데이터셋-불러오기)
 ### - [학습과 예측](basic/tutorial#학습과-예측)
 ### - [컨벤션](basic/tutorial#컨벤션)
 
@@ -20,7 +20,7 @@
 ## [텍스트 데이터 작업](text_analytics/working_with_text_data)
 
 ### - [튜토리얼 설정](text_analytics/working_with_text_data#튜토리얼-설정)
-### - [20개 뉴스그룹 데이터셋 로딩](text_analytics/working_with_text_data#20개-뉴스그룹-데이터셋-로딩)
+### - [20개 뉴스그룹 데이터셋 불러오기](text_analytics/working_with_text_data#20개-뉴스그룹-데이터셋-불러오기)
 ### - [텍스트 파일에서 특성 추출](text_analytics/working_with_text_data#텍스트-파일에서-특성-추출)
 ### - [분류기 훈련](text_analytics/working_with_text_data#분류기-훈련)
 ### - [파이프라인 구축](text_analytics/working_with_text_data#파이프라인-구축)

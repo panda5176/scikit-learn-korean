@@ -22,7 +22,7 @@ RandomForestClassifier(random_state=0)
 
 `fit` 메서드는 보통 2개의 입력을 받습니다:
 
-- 표본 행렬(samples matrix)(또는 설계 행렬) [`X`](glossary#X). `X`의 크기는 보통 `(표본 수, 특성 수)`입니다, 즉 표본(samples)은 행을 나타내고 특성(features)은 열을 나타냅니다.
+- 표본 행렬(samples matrix)(또는 설계 행렬) [`X`](glossary#X). `X`의 크기는 보통 `(n_samples, n_features)`입니다, 즉 표본(samples)은 행을 나타내고 특성(features)은 열을 나타냅니다.
 - 목표값(target values) [`y`](glossary#y)는 회귀(regression) 작업을 위한 실수값들(real numbers)이나 분류(classification)를 위한 정수값(integers)들(또는 어떤 불연속(discrete) 값들의 집합)입니다. 비지도 학습(unsupervised learning) 작업을 위해서는, `y`를 지정할 필요가 없습니다. `y`는 보통 1차원 배열(1d array)이며 `i`번째 항목은 `X`의 `i`번째 표본(행)의 목표값에 대응합니다.
 
 보통 `X`와 `y` 둘다 numpy 배열이나 동등한 [유사-배열](glossary#유사-배열) 데이터 타입일 것으로 예상되며, 어떤 추정기는 희소 행렬(sparse matrix)과 같은 다른 형식들과 함께 작동할 수도 있습니다.
@@ -58,7 +58,7 @@ array([[-1.,  1.],
 
 변환기와 추정기(예측기)는 단일한 통합 객체로 결합할 수 있습니다: 이를 [파이프라인(pipeline)](modules/generated/sklearn.pipeline.Pipeline#sklearn.pipeline.Pipeline)이라 합니다. 파이프라인은 일반 추정기와 동일한 API를 제공합니다: 즉 `fit`과 `predict`로 적합되거나 예측에 사용될 수 있습니다. 나중에 살펴보겠지만, 파이프라인을 사용하는 것은 데이터 유출로부터 여러분을 지켜줄 것입니다, 다시 말해 훈련(training) 데이터에서 일부 테스트(test) 데이터를 공개하는 것입니다.
 
-다음 예시에서, 우리는 붓꽃 데이터셋을 로드(load)하고, 훈련과 테스트 세트로 분할한 다음, 테스트 데이터에서 파이프라인의 정확도(accuracy) 점수를 계산합니다:
+다음 예시에서, 우리는 붓꽃 데이터셋을 불러오고, 훈련과 테스트 세트로 분할한 다음, 테스트 데이터에서 파이프라인의 정확도(accuracy) 점수를 계산합니다:
 
 ```python
 >>> from sklearn.preprocessing import StandardScaler
@@ -74,7 +74,7 @@ array([[-1.,  1.],
 ...     LogisticRegression()
 ... )
 ...
->>> # 붓꽃 데이터셋을 로드하고 훈련과 테스트 세트로 분할합니다
+>>> # 붓꽃 데이터셋을 불러와서 훈련과 테스트 세트로 분할합니다
 >>> X, y = load_iris(return_X_y=True)
 >>> X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 ...
