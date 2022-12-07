@@ -1,4 +1,4 @@
-원문: [A tutorial on statistical-learning for scientific data processing](https://scikit-learn.org/stable/tutorial/statistical_inference/index.html)
+원문: [A tutorial on statistical-learning for scientific data processing](https://scikit-learn.org/stable/tutorial/index.html)
 
 # 과학적인 데이터 처리를 위한 통계적 학습 튜토리얼
 
@@ -10,30 +10,30 @@
 
 사이킷런은 과학 파이썬(Python) 패키지들([넘파이(NumPy)](https://www.numpy.org/), [사이파이(SciPy)](https://scipy.org/), [맷플롯립(matplotlib)](https://matplotlib.org/))의 밀도 있게 짜여진 세계에서 고전적인 기계 학습 알고리즘들을 통합한 파이썬 모듈(module)입니다.
 
-### - [통계적 학습: 사이킷런에서의 설정과 추정기 객체](statistical_inference/settings)
+### - [통계적 학습: 사이킷런에서의 설정과 추정기 객체](settings)
 
-- [데이터셋](statistical_inference/settings#데이터셋)
-- [추정기 객체들](statistical_inference/settings#추정기-객체들)
+- [데이터셋](settings#데이터셋)
+- [추정기 객체](settings#추정기-객체)
 
-### - [지도 학습: 고차원 관측으로부터 출력 변수 예측하기](statistical_inference/supervised_learning)
+### - [지도 학습: 고차원 관측으로부터 출력 변수 예측하기](supervised_learning)
 
-- [최근접 이웃과 차원의 저주](statistical_inference/supervised_learning#최근접-이웃과-차원의-저주)
-- [선형 모델: 회귀부터 희소성까지](statistical_inference/supervised_learning#선형-모델-회귀부터-희소성까지)
-- [서포트 벡터 머신들(SVMs)](statistical_inference/supervised_learning#서포트-벡터-머신들(SVMs))
+- [최근접 이웃과 차원의 저주](supervised_learning#최근접-이웃과-차원의-저주)
+- [선형 모델: 회귀부터 희소성까지](supervised_learning#선형-모델-회귀부터-희소성까지)
+- [서포트 벡터 머신들(SVMs)](supervised_learning#서포트-벡터-머신들(SVMs))
 
-### - [모델 선택: 추정기와 매개변수 선택하기](statistical_inference/model_selection)
+### - [모델 선택: 추정기와 매개변수 선택하기](model_selection)
 
-- [점수, 그리고 교차 검증된 점수](statistical_inference/model_selection#점수,-그리고-교차-검증된-점수)
-- [교차 검증 생성기](statistical_inference/model_selection#교차-검증-생성기)
-- [격자 탐색과 교차 검증된 추정기](statistical_inference/model_selection#격자-탐색과-교차-검증된-추정기)
+- [점수, 그리고 교차 검증된 점수](model_selection#점수,-그리고-교차-검증된-점수)
+- [교차 검증 생성기](model_selection#교차-검증-생성기)
+- [격자 탐색과 교차 검증된 추정기](model_selection#격자-탐색과-교차-검증된-추정기)
 
-### - [비지도 학습: 데이터 표현법 찾기](statistical_inference/unsupervised_learning)
+### - [비지도 학습: 데이터 표현법 찾기](unsupervised_learning)
 
-- [군집화: 관측을 함께 묶기](statistical_inference/unsupervised_learning#군집화-관측을-함께-묶기)
-- [분해: 신호부터 성분과 부하량까지](statistical_inference/unsupervised_learning#분해-신호부터-성분과-부하량까지)
+- [군집화: 관측을 함께 묶기](unsupervised_learning#군집화-관측을-함께-묶기)
+- [분해: 신호부터 성분과 부하량까지](unsupervised_learning#분해-신호부터-성분과-부하량까지)
 
-### - [모두 모으기](statistical_inference/putting_together)
+### - [모두 모으기](putting_together)
 
-- [파이프라이닝](statistical_inference/putting_together#파이프라이닝)
-- [고유얼굴로 얼굴 인식](statistical_inference/putting_together#고유얼굴로-얼굴-인식)
-- [열린 문제: 주식 시장 구조](statistical_inference/putting_together#열린-문제-주식-시장-구조)
+- [파이프라이닝](putting_together#파이프라이닝)
+- [고유얼굴로 얼굴 인식](putting_together#고유얼굴로-얼굴-인식)
+- [열린 문제: 주식 시장 구조](putting_together#열린-문제-주식-시장-구조)
