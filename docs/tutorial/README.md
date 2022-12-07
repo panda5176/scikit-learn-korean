@@ -4,12 +4,12 @@
 
 ## [사이킷런과 함께 하는 기계 학습 소개](basic/tutorial)
 
-### - [기계 학습: 문제 설정](basic/tutorial#기계-학습:-문제-설정)
+### - [기계 학습: 문제 설정](basic/tutorial#기계-학습-문제-설정)
 ### - [예시 데이터셋 불러오기](basic/tutorial#예시-데이터셋-불러오기)
 ### - [학습과 예측](basic/tutorial#학습과-예측)
 ### - [컨벤션](basic/tutorial#컨벤션)
 
-## [과학적인 데이터 처리를 위한 통계적 학습 튜토리얼](statistical_inference/index)
+## [과학적인 데이터 처리를 위한 통계적 학습 튜토리얼](statistical_inference)
 
 ### - [통계적 학습: 사이킷런에서의 설정과 추정기 객체](statistical_inference/settings)
 ### - [지도 학습: 고차원 관측으로부터 출력 변수 예측하기](statistical_inference/supervised_learning)
