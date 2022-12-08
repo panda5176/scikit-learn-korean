@@ -12,12 +12,12 @@
 
 학습 문제는 몇 가지 범주로 나뉩니다:
 
-- [지도 학습(supervised learning)](https://en.wikipedia.org/wiki/Supervised_learning)에서는, 우리가 예측하고자 하는 추가적인 속성이 데이터에 함께 제공됩니다(사이킷런 지도 학습 페이지로 가시려면 [여기](supervised_learning)를 클릭하세요). 이 문제는 다음 중 하나일 수 있습니다:
+- [지도 학습(supervised learning)](https://en.wikipedia.org/wiki/Supervised_learning)에서는, 우리가 예측하고자 하는 추가적인 속성이 데이터에 함께 제공됩니다(사이킷런 지도 학습 페이지로 가시려면 [여기](../../supervised_learning)를 클릭하세요). 이 문제는 다음 중 하나일 수 있습니다:
 
   - [분류(classification)](https://en.wikipedia.org/wiki/Classification_in_machine_learning): 표본은 둘 또는 그 이상의 클래스에 속하며 우리는 이미 레이블된(labeled) 데이터에서 어떻게 레이블되지 않은(unlabeled) 데이터의 클래스를 예측하는지 배우고 싶어합니다. 분류 문제의 예시로는 손글씨 숫자 인식이 있습니다, 이 때 목표는 각 입력 벡터(vector)를 유한한 숫자의 이산형 범주(discrete categories) 중 하나에 할당하는 것입니다. 분류를 생각해볼 수 있는 또다른 방법으로는 제한된 숫자의 범주가 있고 각각 n개의 표본이 제공되며, 표본들에 올바른 범주나 클래스를 레이블하고자 하는 이산형(연속형(continuous)의 반대) 형태의 지도 학습입니다.
   - [회귀(regression)](https://en.wikipedia.org/wiki/Regression_analysis): 만약 원하는 출력이 하나 이상의 연속형 변수라면, 이 작업은 *회귀*라고 부릅니다. 회긔 문제의 예시로는 연어의 길이를 나이와 무게의 함수로 예측하는 것이 있습니다.
 
-- [비지도 학습](https://en.wikipedia.org/wiki/Unsupervised_learning)은, 훈련 데이터를 구성하는 입력 벡터 x가 대응하는 목표값이 전혀 없는 경우입니다. 이런 문제의 목표는 데이터 안에서 비슷한 예시들의 그룹을 찾는 것, 즉 [군집화(clustering)](https://en.wikipedia.org/wiki/Cluster_analysis)거나, 입력 공간(space) 속에서 데이터의 분포를 결정, 즉 [밀도 추정(density estimation)](https://en.wikipedia.org/wiki/Density_estimation)이거나, 또는 *시각화(visualization)* 목적으로 데이터를 고차원(high-dimensional) 공간에서 이차원 또는 삼차원 공간으로 투사(project)하는 것입니다(사이킷런 비지도 학습 페이지로 가시려면 [여기](unsupervised_learning)를 클릭하세요).
+- [비지도 학습](https://en.wikipedia.org/wiki/Unsupervised_learning)은, 훈련 데이터를 구성하는 입력 벡터 x가 대응하는 목표값이 전혀 없는 경우입니다. 이런 문제의 목표는 데이터 안에서 비슷한 예시들의 그룹을 찾는 것, 즉 [군집화(clustering)](https://en.wikipedia.org/wiki/Cluster_analysis)거나, 입력 공간(space) 속에서 데이터의 분포를 결정, 즉 [밀도 추정(density estimation)](https://en.wikipedia.org/wiki/Density_estimation)이거나, 또는 *시각화(visualization)* 목적으로 데이터를 고차원(high-dimensional) 공간에서 이차원 또는 삼차원 공간으로 투사(project)하는 것입니다(사이킷런 비지도 학습 페이지로 가시려면 [여기](../../unsupervised_learning)를 클릭하세요).
 
 **훈련 세트(training set)와 테스트 세트(testing set)**
 
@@ -25,7 +25,7 @@
 
 ## 예시 데이터셋 불러오기
 
-`Scikit-learn`에는 몇 가지 표준적인 데이터셋이 함께 들어있는데, 예시로 분류를 위한 [붓꽃(iris)](https://en.wikipedia.org/wiki/Iris_flower_data_set)과 [숫자(digits)](https://archive.ics.uci.edu/ml/datasets/Pen-Based+Recognition+of+Handwritten+Digits) 데이터셋과 회귀를 위한 [당뇨병(diabetes)](https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html) 등이 있습니다.
+`Scikit-learn`에는 몇 가지 표준적인 데이터셋(datasets)이 함께 들어있는데, 예시로 분류를 위한 [붓꽃(iris)](https://en.wikipedia.org/wiki/Iris_flower_data_set)과 [숫자(digits)](https://archive.ics.uci.edu/ml/datasets/Pen-Based+Recognition+of+Handwritten+Digits) 데이터셋과 회귀를 위한 [당뇨병(diabetes)](https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html) 등이 있습니다.
 
 다음에서는, 우리의 셸(shell)에서 파이썬 인터프리터(Python interpreter)를 시작해 `iris`과 `digits` 데이터셋을 불러옵니다. 우리의 표기 규칙에서는 `$`이 셸 프롬프트(prompt)를 나타내고 `>>>`이 파이썬 인터프리터 프롬프트를 나타냅니다:
 
@@ -36,7 +36,7 @@ $ python
 >>> digits = datasets.load_digits()
 ```
 
-데이터셋은 모든 데이터와 데이터에 대한 일부 메타데이터(metadata)를 담고 있는 사전과 같은(dictionary-like) 객체입니다. 이 데이터는 `.data` 멤버(member)에 저장되는데, 이는 `n_samples, n_features` 배열입니다. 지도 문제의 경우, 하나 이상의 반응 변수가 `.target` 멤버에 저장됩니다. 다양한 데이터셋에 대한 자세한 내용은 [전용 섹션](datasets)에서 찾아볼 수 있습니다.
+데이터셋은 모든 데이터와 데이터에 대한 일부 메타데이터(metadata)를 담고 있는 사전과 같은(dictionary-like) 객체입니다. 이 데이터는 `.data` 멤버(member)에 저장되는데, 이는 `n_samples, n_features` 배열입니다. 지도 문제의 경우, 하나 이상의 반응 변수가 `.target` 멤버에 저장됩니다. 다양한 데이터셋에 대한 자세한 내용은 [전용 섹션](../../datasets)에서 찾아볼 수 있습니다.
 
 예를 들어, 숫자 데이터셋의 경우, `digits.data`는 숫자 표본을 분류하는데 사용할 수 있는 특성에 접근하게 해줍니다:
 
@@ -74,11 +74,11 @@ array([[  0.,   0.,   5.,  13.,   9.,   1.,   0.,   0.],
        [  0.,   0.,   6.,  13.,  10.,   0.,   0.,   0.]])
 ```
 
-[이 데이터셋의 간단한 예제](auto_examples/classification/plot_digits_classification)는 사이킷런에서 어떻게 원래 문제에서 시작해서 사용할만한 데이터의 형태를 만드는지 보여줍니다.
+[이 데이터셋의 간단한 예제](../../auto_examples/classification/plot_digits_classification)는 사이킷런에서 어떻게 원래 문제에서 시작해서 사용할만한 데이터의 형태를 만드는지 보여줍니다.
 
 **외부 데이터셋에서 불러오기**
 
-외부 데이터셋에서 불러오려면, [외부 데이터셋에서 불러오기](datasets/loading_other_datasets#external-datasets)를 참고해주세요.
+외부 데이터셋에서 불러오려면, [외부 데이터셋에서 불러오기](../../datasets/loading_other_datasets#external-datasets)를 참고해주세요.
 
 ## 학습과 예측
 
@@ -97,7 +97,7 @@ array([[  0.,   0.,   5.,  13.,   9.,   1.,   0.,   0.],
 
 **모델의 매개변수 고르기**
 
-이 예시에서는, `gamma` 값을 수동으로 설정했습니다. 이러한 매개변수의 좋은 값을 찾기 위해서, 우리는 [격자 탐색(grid search)](modules/격자_탐색(grid_search))이나 [교차 검증(cross validation)](modules/교차_검증(cross_validation))과 같은 좋은 도구를 사용할 수 있습니다.
+이 예시에서는, `gamma` 값을 수동으로 설정했습니다. 이러한 매개변수의 좋은 값을 찾기 위해서, 우리는 [격자 탐색(grid search)](../../modules/격자_탐색(grid_search))이나 [교차 검증(cross validation)](../../modules/교차_검증(cross_validation))과 같은 좋은 도구를 사용할 수 있습니다.
 
 (분류를 위한) `clf` 추정기 인스턴스(instance)는 먼저 모델에 적합됩니다; 즉, 모델에서 *학습(learn)*해야만 합니다. 이는 우리의 훈련 세트를 `fit` 메서드(method)에 전달함으로써 이뤄집니다. 훈련 세트로, 우리는 우리가 예측하기 위해 남겨둔 마지막 이미지만 제외하고 데이터셋의 모든 이미지를 사용할 것입니다. 우리는 훈련 세트를 `[:-1]` 파이썬 구문으로 선택했는데, 이는 `digits.data`에서 마지막 항목 외에 모든 항목을 포함하는 새로운 배열을 생성합니다:
 
@@ -119,11 +119,11 @@ array([8])
 
 보시다시피, 어려운 작업입니다: 무엇보다도, 이미지는 해상도가 나쁩니다. 분류기에 동의하시나요?
 
-이 분류 문제의 완전한 예시는 여러분이 실행하고 학습할 수 있는 예제로 제공됩니다: [손글씨 숫자 인식하기](auto_examples/classification/plot_digits_classification)
+이 분류 문제의 완전한 예시는 여러분이 실행하고 학습할 수 있는 예제로 제공됩니다: [손글씨 숫자 인식하기](../../auto_examples/classification/plot_digits_classification)
 
 ## 컨벤션
 
-사이킷런 추정기는 그들의 행동을 더욱 예측 가능하게 만들기 위해 특정한 규칙을 따릅니다. [공통 용어 및 API 요소 용어 사전](glossary)에 더 자세한 내용이 설명되어 있습니다.
+사이킷런 추정기는 그들의 행동을 더욱 예측 가능하게 만들기 위해 특정한 규칙을 따릅니다. [공통 용어 및 API 요소 용어 사전](../../glossary)에 더 자세한 내용이 설명되어 있습니다.
 
 ### 형 변환(type casting)
 
@@ -171,7 +171,7 @@ SVC()
 
 ### 매개변수를 다시 적합하고 갱신하기
 
-추정기의 초매개변수(hyper-parameters)는 생성된 다음에도 [set_params()](glossary#set_params) 메서드로 갱신할 수 있습니다. `fit()`을 두 번 이상 호출하면 이전에 모든 `fit()`에서 배운 것들을 덮어씁니다.
+추정기의 초매개변수(hyper-parameters)는 생성된 다음에도 [set_params()](../../glossary#set_params) 메서드로 갱신할 수 있습니다. `fit()`을 두 번 이상 호출하면 이전에 모든 `fit()`에서 배운 것들을 덮어씁니다.
 
 ```python
 >>> import numpy as np
@@ -191,11 +191,11 @@ SVC()
 array([0, 0, 0, 0, 0])
 ```
 
-여기에서, 기본 커널(kernel) `rbf`는 추정기가 생성된 다음에 우선 [`SVC.set_params()`](modules/generated/sklearn.svm.SVC#sklearn.svm.SVC.set_params)를 통해 `linear`로 바뀌고, 추정기를 다시 적합하고(refit) 두 번째 예측을 하기 위해 `rbf`로 돌아갑니다.
+여기에서, 기본 커널(kernel) `rbf`는 추정기가 생성된 다음에 우선 [`SVC.set_params()`](../../modules/generated/sklearn.svm.SVC#sklearn.svm.SVC.set_params)를 통해 `linear`로 바뀌고, 추정기를 다시 적합하고(refit) 두 번째 예측을 하기 위해 `rbf`로 돌아갑니다.
 
 ### 다중클래스(multiclass) 대 다중레이블(multilabel) 적합
 
-[`multiclass classifiers`](modules/classes#module-sklearn.multiclass)를 사용할 때, 수행되는 학습과 예측 작업은 표적 데이터의 형식에 의존합니다:
+[`multiclass classifiers`](../../modules/classes#module-sklearn.multiclass)를 사용할 때, 수행되는 학습과 예측 작업은 표적 데이터의 형식에 의존합니다:
 
 ```python
 >>> from sklearn.svm import SVC
@@ -222,7 +222,7 @@ array([[1, 0, 0],
        [0, 0, 0]])
 ```
 
-여기서는, 분류기는 [`LabelBinarizer`](modules/generated/sklearn.preprocessing.LabelBinarizer)를 사용해 `y`의 2차원 이진 레이블 표현에 `fit()`합니다. 이 경우 `predict()`는 이에 대응하는 다중레이블 예측을 나타내는 2차원 배열을 반환합니다.
+여기서는, 분류기는 [`LabelBinarizer`](../../modules/generated/sklearn.preprocessing.LabelBinarizer)를 사용해 `y`의 2차원 이진 레이블 표현에 `fit()`합니다. 이 경우 `predict()`는 이에 대응하는 다중레이블 예측을 나타내는 2차원 배열을 반환합니다.
 
 네 번째와 다섯 번째 인스턴스는 모두 0을 반환했음을 주의하세요, 이는 그들이 세 레이블 중 아무것도 `fit`하지 않았음을 나타냅니다. 다중레이블 출력과 함께라면, 비슷하게 인스턴스에게 여러 레이블을 할당하게 할 수 있습니다:
 
@@ -238,4 +238,4 @@ array([[1, 1, 0, 0, 0],
        [1, 0, 1, 0, 0]])
 ```
 
-이 경우, 분류기는 각각 여러 레이블이 할당된 인스턴스에 적합합니다. [`MultiLabelBinarizer`](modules/generated/sklearn.preprocessing.MultiLabelBinarizer)는 `fit`하기 위한 다중레이블의 2차원 배열을 이진화하는데 사용됩니다. 결과적으로, `predict()`는 인스턴스마다 여러 예측 레이블이 있는 2차원 배열을 반환합니다.
+이 경우, 분류기는 각각 여러 레이블이 할당된 인스턴스에 적합합니다. [`MultiLabelBinarizer`](../../modules/generated/sklearn.preprocessing.MultiLabelBinarizer)는 `fit`하기 위한 다중레이블의 2차원 배열을 이진화하는데 사용됩니다. 결과적으로, `predict()`는 인스턴스마다 여러 예측 레이블이 있는 2차원 배열을 반환합니다.

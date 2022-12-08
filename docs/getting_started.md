@@ -58,7 +58,7 @@ array([[-1.,  1.],
 
 변환기와 추정기(예측기)는 단일한 통합 객체로 결합할 수 있습니다: 이를 [파이프라인(pipeline)](modules/generated/sklearn.pipeline.Pipeline#sklearn.pipeline.Pipeline)이라 합니다. 파이프라인은 일반 추정기와 동일한 API를 제공합니다: 즉 `fit`과 `predict`로 적합되거나 예측에 사용될 수 있습니다. 나중에 살펴보겠지만, 파이프라인을 사용하는 것은 데이터 유출로부터 여러분을 지켜줄 것입니다, 다시 말해 훈련(training) 데이터에서 일부 테스트(test) 데이터를 공개하는 것입니다.
 
-다음 예시에서, 우리는 붓꽃 데이터셋을 불러오고, 훈련과 테스트 세트로 분할한 다음, 테스트 데이터에서 파이프라인의 정확도(accuracy) 점수를 계산합니다:
+다음 예시에서, 우리는 붓꽃 데이터셋(dataset)을 불러오고, 훈련과 테스트 세트로 분할한 다음, 테스트 데이터에서 파이프라인의 정확도(accuracy) 점수를 계산합니다:
 
 ```python
 >>> from sklearn.preprocessing import StandardScaler

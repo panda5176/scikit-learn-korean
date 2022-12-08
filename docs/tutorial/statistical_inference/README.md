@@ -4,7 +4,7 @@
 
 **통계적 학습**
 
-[기계 학습(machine learning)](https://en.wikipedia.org/wiki/Machine_learning)은 실험 과학이 마주하고 있는 데이터셋들의 크기가 빠르게 커져감에 따라, 그 중요성이 커지고 있는 기술입니다. 기계 학습이 부딪히는 문제는 서로 다른 관측들을 연결하는 예측 함수를 구축하는 것부터, 관측들을 분류하거나, 레이블되지 않은 데이터셋 속의 구조를 배워가는 것까지 다양합니다.
+[기계 학습(machine learning)](https://en.wikipedia.org/wiki/Machine_learning)은 실험 과학이 마주하고 있는 데이터셋(datasets)의 크기가 빠르게 커져감에 따라, 그 중요성이 커지고 있는 기술입니다. 기계 학습이 부딪히는 문제는 서로 다른 관측들을 연결하는 예측 함수를 구축하는 것부터, 관측들을 분류하거나, 레이블되지 않은 데이터셋 속의 구조를 배워가는 것까지 다양합니다.
 
 이 튜토리얼은 [통계적 추론(statistical inference)](https://en.wikipedia.org/wiki/Statistical_inference)를 목표로 기계 학습 기술들을 사용하는 방법론인 *통계적 학습*을 탐구할 것입니다: 손에 쥔 데이터에 대한 결론을 만들어가는 것이죠.
 
