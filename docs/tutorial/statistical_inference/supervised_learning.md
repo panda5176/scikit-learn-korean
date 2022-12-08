@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 원문: [Supervised learning: predicting an output variable from high-dimensional observations](https://scikit-learn.org/stable/tutorial/statistical_inference/supervised_learning.html)
 
 # 지도 학습: 고차원 관측으로부터 출력 변수 예측하기
