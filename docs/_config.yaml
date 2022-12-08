@@ -1,5 +1,3 @@
-theme: jekyll-theme-minimal
+theme: minima
 title: Test
 description: Test
-kramdown:
-  math_engine: mathjax
