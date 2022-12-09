@@ -66,9 +66,9 @@ array([1, 1, 1, 0, 0, 0, 2, 1, 2, 0])
 
 ### 차원의 저주
 
-추정기가 효과적이기 위해서는, 문제에 따라 달라지는 어떤 값 $d$보다, 이웃하는 점들 사이의 거리가 작도록 해야합니다. 일차원에서는, 평균적으로 $n \sim 1/d$의 점이 필요합니다. 위 $k$-NN 예제의 맥락에서는, 만약 데이터가 0부터 1까지의 범위이며 $n$개의 훈련 관측값이 있는 딱 하나의 특성으로 설명된다면, 새로운 데이터는 $1/n$보다 멀리 떨어져있으면 안됩니다. 따라서 최근접 이웃 결정 규칙은 $1/n$이 클래스간 특성 다양성(feature variations)의 규모에 비해 작을수록 효율적일 것입니다.
+추정기가 효과적이기 위해서는, 문제에 따라 달라지는 어떤 값 $d$ 보다, 이웃하는 점들 사이의 거리가 작도록 해야합니다. 일차원에서는, 평균적으로 $n \sim 1/d$ 의 점이 필요합니다. 위 $k$-NN 예제의 맥락에서는, 만약 데이터가 0부터 1까지의 범위이며 $n$ 개의 훈련 관측값이 있는 딱 하나의 특성으로 설명된다면, 새로운 데이터는 $1/n$ 보다 멀리 떨어져있으면 안됩니다. 따라서 최근접 이웃 결정 규칙은 $1/n$ 이 클래스간 특성 다양성(feature variations)의 규모에 비해 작을수록 효율적일 것입니다.
 
-특성의 개수가 $p$라면, 여러분은 $n \sim 1/{d}^p$의 점이 필요합니다. 우리가 일차원에 10개의 점이 필요하다고 해봅시다: 이제 $[0, 1]$ 공간(space)을 덮으려면 $p$ 차원에서 ${10}^p$개의 점이 필요합니다. $p$가 커질수록, 좋은 추정기를 위해서 필요한 훈련 점의 개수는 지수적(exponentially)으로 증가합니다.
+특성의 개수가 $p$ 라면, 여러분은 $n \sim 1/{d}^p$ 의 점이 필요합니다. 우리가 일차원에 10개의 점이 필요하다고 해봅시다: 이제 $[0, 1]$ 공간(space)을 덮으려면 $p$ 차원에서 ${10}^p$ 개의 점이 필요합니다. $p$ 가 커질수록, 좋은 추정기를 위해서 필요한 훈련 점의 개수는 지수적(exponentially)으로 증가합니다.
 
 예를 들어, 각 점이 그냥 단일 숫자(8 바이트(bytes))라면, 소소한 $p \sim 20$ 차원에서의 효과적인 $k$-NN 추정기조차 전체 인터넷의 현재 추정 크기(±1000 엑사바이트(Exabytes)쯤)보다 더 많은 훈련 데이터를 필요로 할 것입니다.
 
@@ -184,7 +184,9 @@ Ridge...
 
 **딱 특성 1과 2만 적합하기**
 
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_3d_001.png)
 ![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_3d_003.png)
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_3d_002.png)
 
 > **참고:** 전체 당뇨병 데이터셋을 표현하는 것은 11 차원을 포함합니다(10개 특성 차원과 하나의 목표 번수). 이러한 표현에 대한 직관을 발달시키는 건 어렵지만, 상당히 *비어있는* 공간이 될 거란걸 염두에 두는 것은 유용할 수 있습니다.
 
@@ -217,7 +219,8 @@ Lasso(alpha=0.025118864315095794)
 
 ![](https://scikit-learn.org/stable/_images/sphx_glr_plot_logistic_001.png)
 
-$y = sigmoid(X \beta - offset) + \epsilon = \cfrac{1}{1 + exp(-X \beta + offset)} + \epsilon$
+$y = \textrm{sigmoid}(X\beta - \textrm{offset}) + \epsilon =
+\frac{1}{1 + \textrm{exp}(- X\beta + \textrm{offset})} + \epsilon$
 
 ```python
 >>> log = linear_model.LogisticRegression(C=1e5)
@@ -264,7 +267,7 @@ X_digits = X_digits / X_digits.max()
 
 **정규화된 SVM(기본값)**
 
-**예시:**
+**예제:**
 
 - [붓꽃 데이터셋에서의 여러 SVM 분류기 도표 그리기](../../auto_examples/svm/plot_iris_svc)
 
