@@ -32,7 +32,7 @@ array([0, 1, 2])
 
 ![](https://scikit-learn.org/stable/_images/sphx_glr_plot_iris_dataset_001.png)
 
-### k-최근접 이웃(k-nearest neighbors) 분류기
+### k-최근접 이웃 분류기
 
 가장 간단한 가능한 분류기는 [최근접 이웃(nearest neighbor)](https://en.wikipedia.org/wiki/K-nearest_neighbor_algorithm)입니다: 새로운 관측 `X_test`이 주어지면, 훈련 세트(training set)(즉 추정기를 훈련하기 위해 사용한 데이터)에서 가장 가까운 특성 벡터(feature vector)가 있는 관측값을 찾는 것입니다. (이 유형의 분류기에 대한 더 많은 정보를 원하신다면 온라인 사이킷런 문서의 [최근접 이웃 섹션](../../modules/neighbors)을 보세요.)
 
@@ -64,7 +64,7 @@ array([1, 2, 1, 0, 0, 0, 2, 1, 2, 0])
 array([1, 1, 1, 0, 0, 0, 2, 1, 2, 0])
 ```
 
-### 차원의 저주(the curse of dimensionality)
+### 차원의 저주
 
 추정기가 효과적이기 위해서는, 문제에 따라 달라지는 어떤 값 $d$보다, 이웃하는 점들 사이의 거리가 작도록 해야 합니다. 일차원에서는, 평균적으로 $n \sim 1/d$의 점이 필요합니다. 위 $k$-NN 예제의 맥락에서는, 만약 데이터가 0부터 1까지의 범위이며 $n$개의 훈련 관측값이 있는 딱 하나의 특성으로 설명된다면, 새로운 데이터는 $1/n$보다 멀리 떨어져있으면 안됩니다. 따라서 최근접 이웃 결정 규칙은 $1/n$이 클래스간 특성 다양성(feature variations)의 규모에 비해 작을수록 효율적일 것입니다.
 
@@ -72,9 +72,183 @@ array([1, 1, 1, 0, 0, 0, 2, 1, 2, 0])
 
 예를 들어, 각 점이 그냥 단일 숫자(8 바이트(bytes))라면, 소소한 $p \sim 20$ 차원에서의 효과적인 $k$-NN 추정기조차 전체 인터넷의 현재 추정 크기(±1000 엑사바이트(Exabytes)쯤)보다 더 많은 훈련 데이터를 필요로 할 것입니다.
 
-이것을 [차원의 저주](https://en.wikipedia.org/wiki/Curse_of_dimensionality)라 부르고 기계 학습이 다루는 핵심 문제입니다.
+이것을 [차원의 저주(the curse of dimensionality)](https://en.wikipedia.org/wiki/Curse_of_dimensionality)라 부르고 기계 학습이 다루는 핵심 문제입니다.
 
 ## 선형 모델: 회귀부터 희소성까지
 
+**당뇨병 데이터셋**
+
+당뇨병(diabetes) 데이터셋은 442명의 환자에게서 측정된 10개의 생리학적 변수(연령(age), 성별(sex), 체중(weight), 혈압(blood pressure))와, 일 년 후의 질병 진행 지표(an indication of disease progression)로 구성되어 있습니다:
+
+```python
+>>> diabetes_X, diabetes_y = datasets.load_diabetes(return_X_y=True)
+>>> diabetes_X_train = diabetes_X[:-20]
+>>> diabetes_X_test  = diabetes_X[-20:]
+>>> diabetes_y_train = diabetes_y[:-20]
+>>> diabetes_y_test  = diabetes_y[-20:]
+```
+
+주어진 작업은 생리학적 변수로부터 질병 진행을 예측하는 것입니다.
+
+### 선형 회귀
+
+[`LinearRegression`(선형 회귀)](../../modules/generated/sklearn.linear_model.LinearRegression)은, 가장 간단한 형태로, 모델의 잔차 제곱(squared residuals)의 합을 가능한 가장 작게 만들기 위해 매개변수(parameters) 집합을 조정하여 선형 모델(linear model)을 데이터 세트에 적합합니다.
+
+선형 모델: $y = X \beta + \epsilon$
+- $X$: 데이터
+- $y$: 목표 변수
+- $\beta$: 계수(coefficients)
+- $\epsilon$: 관찰 잡음(noise)
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_001.png)
+
+```python
+>>> from sklearn import linear_model
+>>> regr = linear_model.LinearRegression()
+>>> regr.fit(diabetes_X_train, diabetes_y_train)
+LinearRegression()
+>>> print(regr.coef_) 
+[   0.30349955 -237.63931533  510.53060544  327.73698041 -814.13170937
+  492.81458798  102.84845219  184.60648906  743.51961675   76.09517222]
+
+
+>>> # 평균 제곱 오차(mean square error)
+>>> np.mean((regr.predict(diabetes_X_test) - diabetes_y_test)**2)
+2004.5...
+
+>>> # 설명되는 분산(variance) 점수: 1은 완벽한 예측이며
+>>> # 0은 X와 y 사이에 선형 연관관계(linear relationship)가
+>>> # 없다는 의미입니다.
+>>> regr.score(diabetes_X_test, diabetes_y_test)
+0.585...
+```
+
+### 수축
+
+만약 차원마다 거의 데이터 점이 없다면, 관측 속의 잡음은 높은 분산을 유도합니다:
+
+```python
+>>> X = np.c_[ .5, 1].T
+>>> y = [.5, 1]
+>>> test = np.c_[ 0, 2].T
+>>> regr = linear_model.LinearRegression()
+
+>>> import matplotlib.pyplot as plt
+>>> plt.figure()
+<...>
+>>> np.random.seed(0)
+>>> for _ in range(6):
+...     this_X = .1 * np.random.normal(size=(2, 1)) + X
+...     regr.fit(this_X, y)
+...     plt.plot(test, regr.predict(test))
+...     plt.scatter(this_X, y, s=3)
+LinearRegression...
+```
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_ridge_variance_001.png)
+
+고차원 통계적 학습(high-dimensional statistical learning)의 해결책은 회귀 계수를 0으로 *수축(shrink)*하는 것입니다: 무작위로 고른 두 관측값의 집합 중 어떤 것이라도 상관관계가 없을 수 있는 것입니다. 이를 [`Ridge(릿지)`](../../modules/generated/sklearn.linear_model.Ridge) 회귀라고 합니다.
+
+```python
+>>> regr = linear_model.Ridge(alpha=.1)
+
+>>> plt.figure()
+<...>
+>>> np.random.seed(0)
+>>> for _ in range(6):
+...     this_X = .1 * np.random.normal(size=(2, 1)) + X
+...     regr.fit(this_X, y)
+...     plt.plot(test, regr.predict(test))
+...     plt.scatter(this_X, y, s=3)
+Ridge...
+```
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_ridge_variance_002.png)
+
+이건 **편향/분산 트레이드오프(bias/variance tradeoff)**의 예입니다: 릿지 `alpha` 매개변수가 클수록, 편향은 높아지고 분산은 낮아집니다.
+
+우리는 누락 오차(left out error)를 최소화하기 위해 `alpha`를 선택할 수 있는데요, 이번엔 인공적인 데이터보다는 당뇨병 데이터셋을 사용합니다:
+
+```python
+>>> alphas = np.logspace(-4, -1, 6)
+>>> print([regr.set_params(alpha=alpha)
+...            .fit(diabetes_X_train, diabetes_y_train)
+...            .score(diabetes_X_test, diabetes_y_test)
+...        for alpha in alphas])
+[0.585..., 0.585..., 0.5854..., 0.5855..., 0.583..., 0.570...]
+```
+
+> **참고:** 적합된 매개변수 잡음을 잡아서 모델이 새로운 데이터에 일반화되는 것을 막는 걸 [과대적합(overfitting)](https://en.wikipedia.org/wiki/Overfitting)이라고 합니다. 릿지 회귀로 도입된 편향은 [정규화(regularization)](https://en.wikipedia.org/wiki/Regularization_%28machine_learning%29)라고 합니다.
+
+### 희소성
+
+**딱 특성 1과 2만 적합하기**
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_3d_003.png)
+
+> **참고:** 전체 당뇨병 데이터셋을 표현하는 것은 11 차원을 포함합니다(10개 특성 차원과 하나의 목표 번수). 이러한 표현에 대한 직관을 발달시키는 건 어렵지만, 상당히 *비어있는* 공간이 될 거란걸 염두에 두는 것은 유용할 수 있습니다.
+
+보다시피, 특성 2번이 전체 모델에서는 강력한 계수를 갖지만, 특성 1번과 함께 고려되었을 때는 `y`에 대해 작은 정보만을 전달합니다.
+
+이 문제의 조건을 개선하기 위해(즉 [차원의 저주](#차원의-저주)를 완화하기 위해), 유익한(informative) 특성만 선택하고, 특성 2번처럼 유익하지 않은(non-informative) 것들은 0으로 설정하는 것이 꽤나 흥미로울 것입니다. 하지만 릿지 회귀는 그들의 기여를 감소시키되, 0으로 설정하지는 않습니다. 다른 벌칙 접근법(penalization approach)인 [라쏘(Lasso)](../../modules/linear_model#라쏘(lasso))(least absolute shrinkage and selection operator)는, 일부 계수를 0으로 설정할 수 있습니다. 이러한 방법을 **희소 방법(sparse methods)**이라 부르며 희소성(sparsity)은 오컴의 면도날(Occam's razor): *더 간단한 모델을 선호하는 것*을 적용하는 것으로 볼 수 있습니다.
+
+```python
+>>> regr = linear_model.Lasso()
+>>> scores = [regr.set_params(alpha=alpha)
+...               .fit(diabetes_X_train, diabetes_y_train)
+...               .score(diabetes_X_test, diabetes_y_test)
+...           for alpha in alphas]
+>>> best_alpha = alphas[scores.index(max(scores))]
+>>> regr.alpha = best_alpha
+>>> regr.fit(diabetes_X_train, diabetes_y_train)
+Lasso(alpha=0.025118864315095794)
+>>> print(regr.coef_)
+[   0.         -212.4...   517.2...  313.7... -160.8...
+   -0.         -187.1...   69.3...  508.6...   71.8... ]
+```
+
+**같은 문제를 위한 다른 알고리즘**
+
+같은 수학 문제를 풀기 위해 다른 알고리즘을 사용할 수 있습니다. 예를 들어 사이킷런의 `Lasso` 객체는, 큰 데이터셋에서 효율적인 [좌표 하강(coordinate descent)](https://en.wikipedia.org/wiki/Coordinate_descent) 방법으로 라쏘 회귀 문제를 풉니다. 하지만, 사이킷런은 *LARS* 알고리즘을 사용하는 [`LassoLars`](../../modules/generated/sklearn.linear_model.LassoLars) 객체도 제공하며, 이는 추정된 가중치 벡터(weight vector)가 매우 희소한 문제들(즉 아주 관측값이 적은 문제들)에 매우 효율적입니다.
+
+### 분류
+
+[붓꽃](https://en.wikipedia.org/wiki/Iris_flower_data_set) 레이블 작업 같은 분류를 위해, 선형 회귀는 결정 경계(decision frontier)에서 멀리 떨어진 데이터에 너무 많은 가중치를 줄 것이기 때문에 좋은 접근법이 아닙니다. 선형 접근법은 시그모이드(sigmoid) 함수 또는 **로지스틱(logistic)** 함수에 적합하는 것입니다:
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_logistic_001.png)
+
+$y = sigmoid(X \beta - offset) + \epsilon = \cfrac{1}{1 + exp(-X \beta + offset)} + \epsilon$
+
+```python
+>>> log = linear_model.LogisticRegression(C=1e5)
+>>> log.fit(iris_X_train, iris_y_train)
+LogisticRegression(C=100000.0)
+```
+
+이는 [`LogisticRegression`(로지스틱 회귀)](../../modules/generated/sklearn.linear_model.LogisticRegression)이라 합니다.
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_iris_logistic_001.png)
+
+**다중클래스(multiclass) 분류**
+
+만약 여러분이 예측할 클래스가 여러 개라면, 일대다(one-versus-all) 분류기를 적합한 다음 최종 결정을 위한 투표 휴리스틱(voting heuristic)을 사용하는 것이 자주 사용되는 옵션입니다.
+
+**로지스틱 회귀에서의 축소와 희소성**
+
+[`LogisticRegression`](../../modules/generated/sklearn.linear_model.LogisticRegression) 객체에서 `C` 매개변수는 정규화의 양을 조절합니다: 큰 `C` 값은 정규화가 적어집니다. `penalty="l2"`는 [수축](#수축)을 주며(즉 희소하지 않은 계수), `penalty="l1"`은 [희소성](#희소성)을 줍니다.
+
+**연습**
+
+최근접 이웃과 선형 모델로 숫자(digits) 데이터셋을 분류해보세요. 마지막 10%를 제외하고 이 관측들에 대한 예측 성능을 테스트합니다.
+
+```python
+from sklearn import datasets, neighbors, linear_model
+
+X_digits, y_digits = datasets.load_digits(return_X_y=True)
+X_digits = X_digits / X_digits.max()
+```
+
+정답지는 [여기](https://scikit-learn.org/stable/_downloads/e4d278c5c3a8450d66b5dd01a57ae923/plot_digits_classification_exercise.py)에서 다운로드할 수 있습니다.
 
 ## 서포트 벡터 머신들(SVMs)
+
