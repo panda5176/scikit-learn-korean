@@ -19,7 +19,7 @@
 
 - [최근접 이웃과 차원의 저주](supervised_learning#최근접-이웃과-차원의-저주)
 - [선형 모델: 회귀부터 희소성까지](supervised_learning#선형-모델-회귀부터-희소성까지)
-- [서포트 벡터 머신들(SVMs)](supervised_learning#서포트-벡터-머신들(SVMs))
+- [서포트 벡터 머신(SVMs)](supervised_learning#서포트-벡터-머신(SVMs))
 
 ### - [모델 선택: 추정기와 매개변수 선택하기](model_selection)
 

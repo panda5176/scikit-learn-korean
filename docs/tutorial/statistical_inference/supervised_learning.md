@@ -66,7 +66,7 @@ array([1, 1, 1, 0, 0, 0, 2, 1, 2, 0])
 
 ### 차원의 저주
 
-추정기가 효과적이기 위해서는, 문제에 따라 달라지는 어떤 값 $d$보다, 이웃하는 점들 사이의 거리가 작도록 해야 합니다. 일차원에서는, 평균적으로 $n \sim 1/d$의 점이 필요합니다. 위 $k$-NN 예제의 맥락에서는, 만약 데이터가 0부터 1까지의 범위이며 $n$개의 훈련 관측값이 있는 딱 하나의 특성으로 설명된다면, 새로운 데이터는 $1/n$보다 멀리 떨어져있으면 안됩니다. 따라서 최근접 이웃 결정 규칙은 $1/n$이 클래스간 특성 다양성(feature variations)의 규모에 비해 작을수록 효율적일 것입니다.
+추정기가 효과적이기 위해서는, 문제에 따라 달라지는 어떤 값 $d$보다, 이웃하는 점들 사이의 거리가 작도록 해야합니다. 일차원에서는, 평균적으로 $n \sim 1/d$의 점이 필요합니다. 위 $k$-NN 예제의 맥락에서는, 만약 데이터가 0부터 1까지의 범위이며 $n$개의 훈련 관측값이 있는 딱 하나의 특성으로 설명된다면, 새로운 데이터는 $1/n$보다 멀리 떨어져있으면 안됩니다. 따라서 최근접 이웃 결정 규칙은 $1/n$이 클래스간 특성 다양성(feature variations)의 규모에 비해 작을수록 효율적일 것입니다.
 
 특성의 개수가 $p$라면, 여러분은 $n \sim 1/{d}^p$의 점이 필요합니다. 우리가 일차원에 10개의 점이 필요하다고 해봅시다: 이제 $[0, 1]$ 공간(space)을 덮으려면 $p$ 차원에서 ${10}^p$개의 점이 필요합니다. $p$가 커질수록, 좋은 추정기를 위해서 필요한 훈련 점의 개수는 지수적(exponentially)으로 증가합니다.
 
@@ -239,7 +239,7 @@ LogisticRegression(C=100000.0)
 
 **연습**
 
-최근접 이웃과 선형 모델로 숫자(digits) 데이터셋을 분류해보세요. 마지막 10%를 제외하고 이 관측들에 대한 예측 성능을 테스트합니다.
+최근접 이웃과 선형 모델로 숫자(digits) 데이터셋을 분류해보세요. 마지막 10%를 제외하고 이 관측들에 대한 예측 성능을 테스트하세요.
 
 ```python
 from sklearn import datasets, neighbors, linear_model
@@ -250,5 +250,88 @@ X_digits = X_digits / X_digits.max()
 
 정답지는 [여기](https://scikit-learn.org/stable/_downloads/e4d278c5c3a8450d66b5dd01a57ae923/plot_digits_classification_exercise.py)에서 다운로드할 수 있습니다.
 
-## 서포트 벡터 머신들(SVMs)
+## 서포트 벡터 머신(SVMs)
 
+### 선형 SVMs
+
+[서포트 벡터 머신(Support Vector Machines)](../../modules/svm)은 판별(discriminant) 모델군에 속합니다: 그들은 두 클래스 사이의 마진(margin)을 최대화하는 평면(plane)을 구축하는 표본의 조합을 찾고자 합니다. 정규화는 `C` 매개변수로 설정합니다: 작은 `C` 값은 마진이 분리하는 선 주위의 많거나 또는 모든 관측을 사용해 계산된다는 것을 의미합니다(많은 정규화); 큰 `C` 값은 마진이 분리하는 선에 가까운 관측을 사용해 계산된다는 것을 의미합니다(적은 정규화).
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_svm_margin_001.png)
+
+**정규화되지 않은 SVM**
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_svm_margin_002.png)
+
+**정규화된 SVM(기본값)**
+
+**예시:**
+
+- [붓꽃 데이터셋에서의 여러 SVM 분류기 도표 그리기](../../auto_examples/svm/plot_iris_svc)
+
+SVM은 회귀에서도 -[SVR(서포트 벡터 회귀)](../../modules/generated/sklearn.svm.SVR)(Support Vector Regression), 분류에서도 -[SVC(서포트 벡터 분류)](../../modules/generated/sklearn.svm.SVC)(Support Vector Classification)- 사용할 수 있습니다.
+
+```python
+>>> from sklearn import svm
+>>> svc = svm.SVC(kernel='linear')
+>>> svc.fit(iris_X_train, iris_y_train)
+SVC(kernel='linear')
+```
+
+> **경고: 데이터 정규화하기(normalizing)  
+SVM을 포함한 많은 추정기들에게, 각 특성에 대해 단위 표준 편차(unit standard deviation)가 있는 데이터셋을 갖는 것이 좋은 예측값을 얻기 위해 중요합니다.
+
+### 커널 사용
+
+클래스들은 특성 공간에서 항상 선형적으로 분리 가능(linearly separable)하지는 않습니다. 해결책은 선형은 아니지만 대신에 다항식(polynomial)일 수 있는 결정 함수(decision function)를 구축하는 것입니다. 이는 *커널(kernels)*을 관측값에 배치하여 결정 에너지(decision energy)를 만드는 것처럼 보이는 *커널 트릭(kernel trick)*을 사용하여 수행합니다.
+
+### 선형 커널
+
+```python
+>>> svc = svm.SVC(kernel='linear')
+```
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_svm_kernels_001.png)
+
+### 다항식 커널
+
+```python
+>>> svc = svm.SVC(kernel='poly',
+...               degree=3)
+>>> # degree(차수): 다항식 차수
+```
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_svm_kernels_002.png)
+
+### RBF 커널(Radial Basis Function(방사기저함수))
+
+```python
+>> svc = svm.SVC(kernel='rbf')
+>>> # gamma(감마): 방사 커널의
+>>> # 크기의 역수
+```
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_svm_kernels_003.png)
+
+**대화형 예제**
+
+`svm_gui.py`를 다운로드하려면 [SVM GUI](../../auto_examples/applications/svm_gui)를 보세요; 우측과 좌측 버튼으로 각 클래스에 데이터 점을 더하고, 모델을 적합하고 매개변수와 데이터를 바꾸세요.
+
+**연습**
+
+2개의 첫 특성을 사용해, SVM으로 붓꽃 데이터셋에서 클래스 1번과 2번을 분류해보세요. 각 클래스의 마지막 10%를 제외하고 이 관측들에 대한 예측 성능을 테스트하세요.
+
+**경고**: 클래스에 순서가 있으니, 전체 끝 10%를 제외하지는 마세요, 만약 그러면 여러분은 오직 한 클래스만 테스트하게 될 것입니다.
+
+**힌트**: 직관을 얻기 위해 `decision_function` 방법을 제공받아 사용할 수 있습니다.
+
+```python
+X = iris.data
+y = iris.target
+
+X = X[y != 0, :2]
+y = y[y != 0]
+```
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_iris_dataset_001.png)
+
+정답지는 [여기](https://scikit-learn.org/stable/_downloads/a3ad6892094cf4c9641b7b11f9263348/plot_iris_exercise.py)에서 다운로드할 수 있습니다.
