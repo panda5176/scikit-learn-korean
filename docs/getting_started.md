@@ -151,8 +151,8 @@ RandomizedSearchCV(estimator=RandomForestRegressor(random_state=0), n_iter=5,
 
 추정기 적합과 예측, 전처리 단계, 파이프라인, 교차검증 도구와 자동 초매개변수 탐색을 간략하게 다루어보았습니다. 이 안내서는 라이브러리의 일부 주요 기능들에 대한 개요를 제공하긴 하지만, `scikit-learn`에는 더 많은 것들이 있습니다!
 
-우리가 제공하는 모든 도구에 대한 자세한 설명은 [사용자 안내서](user_guide)를 참고하세요. [API 레퍼런스](modules/classes#API-레퍼런스)에서는 공개 API의 완전한 목록을 찾아볼 수 있습니다.
+우리가 제공하는 모든 도구에 대한 자세한 설명은 [사용자 안내서](user_guide)를 참고하세요. [API 참조](modules/classes)에서는 공개 API의 완전한 목록을 찾아볼 수 있습니다.
 
-또 다양한 상황에서 `scikit-learn`의 사용 방식을 묘사한 방대한 [예시들](auto_examples#일반적인-예시)도 있습니다.
+또 다양한 상황에서 `scikit-learn`의 사용 방식을 묘사한 방대한 [예제](auto_examples)도 있습니다.
 
 [튜토리얼](tutorial)도 추가적인 공부할 거리를 담고 있습니다.
