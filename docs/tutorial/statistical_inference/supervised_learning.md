@@ -184,15 +184,13 @@ Ridge...
 
 **딱 특성 1과 2만 적합하기**
 
-![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_3d_001.png)
-![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_3d_003.png)
-![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_3d_002.png)
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_3d_001.png) ![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_3d_003.png) ![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_3d_002.png)
 
 > **참고:** 전체 당뇨병 데이터셋을 표현하는 것은 11 차원을 포함합니다(10개 특성 차원과 하나의 목표 번수). 이러한 표현에 대한 직관을 발달시키는 건 어렵지만, 상당히 *비어있는* 공간이 될 거란걸 염두에 두는 것은 유용할 수 있습니다.
 
 보다시피, 특성 2번이 전체 모델에서는 강력한 계수를 갖지만, 특성 1번과 함께 고려되었을 때는 `y`에 대해 작은 정보만을 전달합니다.
 
-이 문제의 조건을 개선하기 위해(즉 [차원의 저주](#차원의-저주)를 완화하기 위해), 유익한(informative) 특성만 선택하고, 특성 2번처럼 유익하지 않은(non-informative) 것들은 0으로 설정하는 것이 꽤나 흥미로울 것입니다. 하지만 릿지 회귀는 그들의 기여를 감소시키되, 0으로 설정하지는 않습니다. 다른 벌칙 접근법(penalization approach)인 [라쏘(Lasso)](../../modules/linear_model#라쏘(lasso))(least absolute shrinkage and selection operator)는, 일부 계수를 0으로 설정할 수 있습니다. 이러한 방법을 **희소 방법(sparse methods)**이라 부르며 희소성(sparsity)은 오컴의 면도날(Occam's razor): *더 간단한 모델을 선호하는 것*을 적용하는 것으로 볼 수 있습니다.
+이 문제의 조건을 개선하기 위해(즉 [차원의 저주](#차원의-저주)를 완화하기 위해), 유익한(informative) 특성만 선택하고, 특성 2번처럼 유익하지 않은(non-informative) 것들은 0으로 설정하는 것이 꽤나 흥미로울 것입니다. 하지만 릿지 회귀는 그들의 기여를 감소시키되, 0으로 설정하지는 않습니다. 다른 벌칙 접근법(penalization approach)인 [라쏘(Lasso)](../../modules/linear_model#라쏘(lasso))(least absolute shrinkage and selection operator)는, 일부 계수를 0으로 설정할 수 있습니다. 이러한 기법을 **희소 기법(sparse methods)**이라 부르며 희소성(sparsity)은 오컴의 면도날(Occam's razor): *더 간단한 모델을 선호하는 것*을 적용하는 것으로 볼 수 있습니다.
 
 ```python
 >>> regr = linear_model.Lasso()
@@ -211,7 +209,7 @@ Lasso(alpha=0.025118864315095794)
 
 **같은 문제를 위한 다른 알고리즘**
 
-같은 수학 문제를 풀기 위해 다른 알고리즘을 사용할 수 있습니다. 예를 들어 사이킷런의 `Lasso` 객체는, 큰 데이터셋에서 효율적인 [좌표 하강(coordinate descent)](https://en.wikipedia.org/wiki/Coordinate_descent) 방법으로 라쏘 회귀 문제를 풉니다. 하지만, 사이킷런은 *LARS* 알고리즘을 사용하는 [`LassoLars`](../../modules/generated/sklearn.linear_model.LassoLars) 객체도 제공하며, 이는 추정된 가중치 벡터(weight vector)가 매우 희소한 문제들(즉 아주 관측값이 적은 문제들)에 매우 효율적입니다.
+같은 수학 문제를 풀기 위해 다른 알고리즘을 사용할 수 있습니다. 예를 들어 사이킷런의 `Lasso` 객체는, 큰 데이터셋에서 효율적인 [좌표 하강(coordinate descent)](https://en.wikipedia.org/wiki/Coordinate_descent) 기법으로 라쏘 회귀 문제를 풉니다. 하지만, 사이킷런은 *LARS* 알고리즘을 사용하는 [`LassoLars`](../../modules/generated/sklearn.linear_model.LassoLars) 객체도 제공하며, 이는 추정된 가중치 벡터(weight vector)가 매우 희소한 문제들(즉 아주 관측값이 적은 문제들)에 매우 효율적입니다.
 
 ### 분류
 
@@ -325,7 +323,7 @@ SVM을 포함한 많은 추정기들에게, 각 특성에 대해 단위 표준 �
 
 **경고**: 클래스에 순서가 있으니, 전체 끝 10%를 제외하지는 마세요, 만약 그러면 여러분은 오직 한 클래스만 테스트하게 될 것입니다.
 
-**힌트**: 직관을 얻기 위해 `decision_function` 방법을 제공받아 사용할 수 있습니다.
+**힌트**: 직관을 얻기 위해 `decision_function` 메서드를 제공받아 사용할 수 있습니다.
 
 ```python
 X = iris.data

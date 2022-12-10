@@ -17,7 +17,7 @@
   - [분류(classification)](https://en.wikipedia.org/wiki/Classification_in_machine_learning): 표본은 둘 또는 그 이상의 클래스에 속하며 우리는 이미 레이블된(labeled) 데이터에서 어떻게 레이블되지 않은(unlabeled) 데이터의 클래스를 예측하는지 배우고 싶어합니다. 분류 문제의 예시로는 손글씨 숫자 인식이 있습니다, 이 때 목표는 각 입력 벡터(vector)를 유한한 숫자의 이산형 범주(discrete categories) 중 하나에 할당하는 것입니다. 분류를 생각해볼 수 있는 또다른 방법으로는 제한된 숫자의 범주가 있고 각각 n개의 표본이 제공되며, 표본들에 올바른 범주나 클래스를 레이블하고자 하는 이산형(연속형(continuous)의 반대) 형태의 지도 학습입니다.
   - [회귀(regression)](https://en.wikipedia.org/wiki/Regression_analysis): 만약 원하는 출력이 하나 이상의 연속형 변수라면, 이 작업은 *회귀*라고 부릅니다. 회긔 문제의 예시로는 연어의 길이를 나이와 무게의 함수로 예측하는 것이 있습니다.
 
-- [비지도 학습](https://en.wikipedia.org/wiki/Unsupervised_learning)은, 훈련 데이터를 구성하는 입력 벡터 x가 대응하는 목표값이 전혀 없는 경우입니다. 이런 문제의 목표는 데이터 안에서 비슷한 예시들의 그룹을 찾는 것, 즉 [군집화(clustering)](https://en.wikipedia.org/wiki/Cluster_analysis)거나, 입력 공간(space) 속에서 데이터의 분포를 결정, 즉 [밀도 추정(density estimation)](https://en.wikipedia.org/wiki/Density_estimation)이거나, 또는 *시각화(visualization)* 목적으로 데이터를 고차원(high-dimensional) 공간에서 이차원 또는 삼차원 공간으로 투사(project)하는 것입니다(사이킷런 비지도 학습 페이지로 가시려면 [여기](../../unsupervised_learning)를 클릭하세요).
+- [비지도 학습](https://en.wikipedia.org/wiki/Unsupervised_learning)은, 훈련 데이터를 구성하는 입력 벡터 x가 대응하는 목표값이 전혀 없는 경우입니다. 이런 문제의 목표는 데이터 안에서 비슷한 예시들의 그룹을 찾는 것, 즉 [군집화(clustering)](https://en.wikipedia.org/wiki/Cluster_analysis)거나, 입력 공간(space) 속에서 데이터의 분포를 결정, 즉 [밀도 추정(density estimation)](https://en.wikipedia.org/wiki/Density_estimation)이거나, 또는 *시각화(visualization)* 목적으로 데이터를 고차원(high-dimensional) 공간에서 이차원 또는 삼차원 공간으로 투영(project)하는 것입니다(사이킷런 비지도 학습 페이지로 가시려면 [여기](../../unsupervised_learning)를 클릭하세요).
 
 **훈련 세트(training set)와 테스트 세트(testing set)**
 
@@ -51,7 +51,7 @@ $ python
  [ 0.   0.  10. ...  12.   1.   0.]]
 ```
 
-그리고 `digits.target`은 숫자 데이터셋에 대한 실제 정답을 제공하는데, 이는 우리가 배우고자 하는 각 숫자 이미지에 대응하는 숫자입니다:
+그리고 `digits.target`은 숫자 데이터셋에 대한 실제 정답(ground truth)을 제공하는데, 이는 우리가 배우고자 하는 각 숫자 이미지에 대응하는 숫자입니다:
 
 ```python
 >>> digits.target
