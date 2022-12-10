@@ -88,19 +88,19 @@ array([0.96578289, 0.92708922, 0.96681476, 0.96362897, 0.93192644])
 
 **교차 검증 생성기(generators)**
 
-|[`KFold`](../../modules/generated/sklearn.model_selection.KFold) **(n_splits, shuffle, random_state)**|[`StratifiedKFold`](../../modules/generated/sklearn.model_selection.StratifiedKFold) **(n_splits, shuffle, random_state)**|[`GroupKFold`](../../modules/generated/sklearn.model_selection.GroupKFold) (n_splits)|
+|[`KFold`](../../modules/generated/sklearn.model_selection.KFold) (n_splits, shuffle, random_state)|[`StratifiedKFold`](../../modules/generated/sklearn.model_selection.StratifiedKFold) (n_splits, shuffle, random_state)|[`GroupKFold`](../../modules/generated/sklearn.model_selection.GroupKFold) (n_splits)|
 |---|---|---|
 |K겹으로 분할하고, K-1개로 훈련하여 제외한 하나로 테스트합니다.|K겹과 같지만 각 겹 안에서 클래스 분포를 보존합니다.|같은 그룹이 테스트와 훈련 모두에 있지 않도록 보장합니다.|
 
-|[`ShuffleSplit`](../../modules/generated/sklearn.model_selection.ShuffleSplit) **(n_splits, test_size, train_size, random_state)**|[`StratifiedShuffleSplit`](../../modules/generated/sklearn.model_selection.StratifiedShuffleSplit)|[`GroupShuffleSplit`](../../modules/generated/sklearn.model_selection.GroupShuffleSplit)|
+|[`ShuffleSplit`](../../modules/generated/sklearn.model_selection.ShuffleSplit) (n_splits, test_size, train_size, random_state)|[`StratifiedShuffleSplit`](../../modules/generated/sklearn.model_selection.StratifiedShuffleSplit)|[`GroupShuffleSplit`](../../modules/generated/sklearn.model_selection.GroupShuffleSplit)|
 |---|---|---|
 |훈련/테스트 색인을 무작위 순열에 기반해 생성합니다.|셔플 분할(shuffle split)과 같지만 각 반복 안에서 클래스 분포를 보존합니다.|같은 그룹이 테스트와 훈련 모두에 있지 않도록 보장합니다.|
 
-|[`LeaveOneGroupOut`](../../modules/generated/sklearn.model_selection.LeaveOneGroupOut) **()**|[`LeavePGroupsOut`](../../modules/generated/sklearn.model_selection.LeavePGroupsOut) **(n_groups)**|[`LeaveOneOut`](../../modules/generated/sklearn.model_selection.LeaveOneOut) **()**|
+|[`LeaveOneGroupOut`](../../modules/generated/sklearn.model_selection.LeaveOneGroupOut) ()|[`LeavePGroupsOut`](../../modules/generated/sklearn.model_selection.LeavePGroupsOut) (n_groups)|[`LeaveOneOut`](../../modules/generated/sklearn.model_selection.LeaveOneOut) ()|
 |---|---|---|
 |그룹 관측을 위해 그룹 배열을 사용합니다.|P개 그룹을 제외합니다.|한 관측을 제외합니다.|
 
-|[`LeaveOut`](../../modules/generated/sklearn.model_selection.LeavePOut) **(p)**|[`PredefinedSplit`](../../modules/generated/sklearn.model_selection.PredefinedSplit)|
+|[`LeaveOut`](../../modules/generated/sklearn.model_selection.LeavePOut) (p)|[`PredefinedSplit`](../../modules/generated/sklearn.model_selection.PredefinedSplit)|
 |---|---|
 |P개 관측을 제외합니다.|훈련/테스트 색인을 미리 정의된 분할을 기반으로 생성합니다.|
 
