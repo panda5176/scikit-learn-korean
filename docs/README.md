@@ -15,6 +15,7 @@
 - *[튜토리얼](tutorial) (원문: [Tutorial](https://scikit-learn.org/stable/tutorial/index.html))*
 - *[사용자 안내서](user_guide) (원문: [User Guide](https://scikit-learn.org/stable/user_guide.html))*
 - *[예제](auto_examples) (원문: [Examples](https://scikit-learn.org/stable/auto_examples/index.html))*
+- *[외부 리소스, 비디오와 토크](presentations) (원문: [External Resources, Videos and Talks](https://scikit-learn.org/stable/presentations.html))*
 - *[용어 사전](glossary) (원문: [Glossary](https://scikit-learn.org/stable/glossary.html))*
 - *[자주 묻는 질문](faq) (원문: [FAQ](https://scikit-learn.org/stable/faq.html))*
 - *[관련 프로젝트](related_projects) (원문: [Related packages](https://scikit-learn.org/stable/related_projects.html))*
