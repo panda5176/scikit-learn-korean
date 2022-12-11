@@ -1,6 +1,6 @@
 원문: [An introduction to machine learning with scikit-learn](https://scikit-learn.org/stable/tutorial/basic/tutorial.html)
 
-# 사이킷런과 함께 하는 기계 학습 소개
+# 사이킷런과 함께 하는 기계 학습 입문
 
 **섹션 내용**
 
