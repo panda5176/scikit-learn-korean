@@ -31,7 +31,7 @@
 ### - [연습 3: CLI 텍스트 분류 유틸리티](text_analytics/working_with_text_data#연습-3:-CLI-텍스트-분류-유틸리티)
 ### - [여기서부터 어디로](text_analytics/working_with_text_data#여기서부터-어디로)
 
-## [올바른 추정기 선택](machine_learning_map/index)
+## [알맞은 추정기 선택](machine_learning_map)
 
 ## [외부 리소스, 비디오와 토크](../presentations)
 
