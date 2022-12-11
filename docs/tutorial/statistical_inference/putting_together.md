@@ -4,7 +4,7 @@
 
 ## 파이프라이닝
 
-우리는 어떤 추정기(estimators)는 데이터를 변환하고 어떤 추정기는 변수를 예측할 수 있음을 보았습니다. 우리는 또한 결합된 추정기를 만들 수 있습니다:
+우리는 어떤 추정기(estimators)는 데이터를 변환하고 어떤 추정기는 변수를 예측할 수 있음을 보았습니다. 또 우리는 결합된 추정기를 만들 수 있습니다:
 
 ```python
 from sklearn.decomposition import PCA
@@ -248,6 +248,6 @@ Gerhard_Schroeder       0.91      0.75      0.82        28
 
 ## 열린 문제: 주식 시장 구조
 
-주어진 시간 프레임(time frame) 구글(Google)의 주가 변동(the variation in stock prices)을 예측할 수 있을까요?
+주어진 시간 프레임(time frame)에서 구글(Google)의 주가 변동(the variation in stock prices)을 예측할 수 있을까요?
 
 [그래프 구조 학습하기](../../auto_examples/applications/plot_stock_market#그래프-구조-학습하기)
