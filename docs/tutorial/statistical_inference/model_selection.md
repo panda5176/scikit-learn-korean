@@ -38,9 +38,9 @@
 
 ## 교차 검증 생성기
 
-사이킷런에는 유명한 교차 검증 전략을 위한 훈련/테스트 색인(indices) 목록을 만드는 데 사용할 수 있는 클래스 모음이 있습니다.
+사이킷런에는 유명한 교차 검증 전략을 위한 훈련/테스트 인덱스(indices) 목록을 만드는 데 사용할 수 있는 클래스 모음이 있습니다.
 
-그것들은 분할하기 위한 입력 데이터셋을 받아서, 선택한 교차 검증 전략의 각 반복(iteration)에 대한 훈련/테스트 세트 색인을 생성하는 `split` 메서드를 노출합니다.
+그것들은 분할하기 위한 입력 데이터셋을 받아서, 선택한 교차 검증 전략의 각 반복(iteration)에 대한 훈련/테스트 세트 인덱스를 생성하는 `split` 메서드를 노출합니다.
 
 이 예시는 `split` 메서드의 사용례를 보여줍니다.
 
@@ -94,7 +94,7 @@ array([0.96578289, 0.92708922, 0.96681476, 0.96362897, 0.93192644])
 
 |[`ShuffleSplit`](../../modules/generated/sklearn.model_selection.ShuffleSplit) (n_splits, test_size, train_size, random_state)|[`StratifiedShuffleSplit`](../../modules/generated/sklearn.model_selection.StratifiedShuffleSplit)|[`GroupShuffleSplit`](../../modules/generated/sklearn.model_selection.GroupShuffleSplit)|
 |---|---|---|
-|훈련/테스트 색인을 무작위 순열에 기반해 생성합니다.|셔플 분할(shuffle split)과 같지만 각 반복 안에서 클래스 분포를 보존합니다.|같은 그룹이 테스트와 훈련 모두에 있지 않도록 보장합니다.|
+|훈련/테스트 인덱스를 무작위 순열에 기반해 생성합니다.|셔플 분할(shuffle split)과 같지만 각 반복 안에서 클래스 분포를 보존합니다.|같은 그룹이 테스트와 훈련 모두에 있지 않도록 보장합니다.|
 
 |[`LeaveOneGroupOut`](../../modules/generated/sklearn.model_selection.LeaveOneGroupOut) ()|[`LeavePGroupsOut`](../../modules/generated/sklearn.model_selection.LeavePGroupsOut) (n_groups)|[`LeaveOneOut`](../../modules/generated/sklearn.model_selection.LeaveOneOut) ()|
 |---|---|---|
@@ -102,7 +102,7 @@ array([0.96578289, 0.92708922, 0.96681476, 0.96362897, 0.93192644])
 
 |[`LeaveOut`](../../modules/generated/sklearn.model_selection.LeavePOut) (p)|[`PredefinedSplit`](../../modules/generated/sklearn.model_selection.PredefinedSplit)|
 |---|---|
-|P개 관측을 제외합니다.|훈련/테스트 색인을 미리 정의된 분할을 기반으로 생성합니다.|
+|P개 관측을 제외합니다.|훈련/테스트 인덱스를 미리 정의된 분할을 기반으로 생성합니다.|
 
 **연습**
 

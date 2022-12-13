@@ -20,7 +20,7 @@
 ## [텍스트 데이터 작업](text_analytics/working_with_text_data)
 
 ### - [튜토리얼 설정](text_analytics/working_with_text_data#튜토리얼-설정)
-### - [20개 뉴스그룹 데이터셋 불러오기](text_analytics/working_with_text_data#20개-뉴스그룹-데이터셋-불러오기)
+### - [20 가지 뉴스그룹 데이터셋 불러오기](text_analytics/working_with_text_data#20개-뉴스그룹-데이터셋-불러오기)
 ### - [텍스트 파일에서 특성 추출](text_analytics/working_with_text_data#텍스트-파일에서-특성-추출)
 ### - [분류기 훈련](text_analytics/working_with_text_data#분류기-훈련)
 ### - [파이프라인 구축](text_analytics/working_with_text_data#파이프라인-구축)
