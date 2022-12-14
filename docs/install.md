@@ -122,7 +122,7 @@ $ python -c "import sklearn; sklearn.show_versions()"
 
 ### **운영 체제** 리눅스(Linux), **패키저(packager)** pip
 
-리눅스 배포판의 패키지 매니저(package manager)로 python3와 python3-pip를 설치하세요.  
+리눅스 배포판의 패키지 관리자(package manager)로 python3와 python3-pip를 설치하세요.  
 그리고 실행하세요:
 
 ```sh
@@ -139,7 +139,7 @@ $ python -c "import sklearn; sklearn.show_versions()"
 
 ### **운영 체제** 리눅스(Linux), **패키저(packager)** pip, pip virtualenv 사용
 
-리눅스 배포판의 패키지 매니저(package manager)로 python3와 python3-pip를 설치하세요.  
+리눅스 배포판의 패키지 관리자(package manager)로 python3와 python3-pip를 설치하세요.  
 그리고 실행하세요:
 
 ```sh
@@ -174,9 +174,9 @@ $ conda list  # 활성화된 가상환경에 모든 패키지가 설치되었는
 $ python -c "import sklearn; sklearn.show_versions()"
 ```
 
-다른 패키지와의 잠재적인 충돌(conflicts)을 피하기 위해 [가상 환경(virtual environment)(venv)](https://docs.python.org/3/tutorial/venv.html)이나 [콘다 환경(conda environment)](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)을 사용하는 것을 강력하게 추천한다는 것을 참고하세요.
+다른 패키지와의 잠재적인 충돌(conflicts)을 피하기 위해 [가상 환경(virtual environment, venv)](https://docs.python.org/3/tutorial/venv.html)이나 [콘다 환경(conda environment)](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)을 사용하는 것을 강력하게 추천한다는 것을 참고하세요.
 
-이러한 격리된 환경은 전에 설치된 어떠한 파이썬 패키지와 상관 없이, pip나 콘다 및 그 의존 항목들(dependencies)로 사이킷런의 특정 버전을 설치할 수 있게 합니다. 특히 리눅스에서는 배포판의 패키지 매니저(apt, dnf, pacman...)가 관리하는 패키지들과 함께 pip 패키지를 설치하지 않는 것이 좋습니다.
+이러한 격리된 환경은 전에 설치된 어떠한 파이썬 패키지와 상관 없이, pip나 콘다 및 그 의존 항목들(dependencies)로 사이킷런의 특정 버전을 설치할 수 있게 합니다. 특히 리눅스에서는 배포판의 패키지 관리자(apt, dnf, pacman...)가 관리하는 패키지들과 함께 pip 패키지를 설치하지 않는 것이 좋습니다.
 
 넘파이(NumPy)나 사이파이(SciPy)를 아직 설치하지 않았다면, 콘다나 pip로 설치할 수 있습니다. pip를 쓴다면, (라즈베리 파이(Raspberry Pi)에서의 리눅스처럼) 특정 구성의 운영 체제와 하드웨어(hardware)를 사용할 때, *바이너리 휠(binary wheels)*을 사용하는지와 넘파이와 사이파이가 소스에서 다시 컴파일(recompile)되지 않는지 확인하세요.
 
@@ -252,3 +252,79 @@ sudo pacman -S python-scikit-learn
 
 ### 데비안/우분투(Debian/Ubuntu)
 
+데비안/우분투 패키지는 `python3-sklearn`(파이썬 모듈들), `python3-sklearn-lib`(저수준 구현과 바인딩(bindings)), `python3-sklearn-doc`(문서)의 세 개의 다른 패키지에 분할되어 있습니다. 오직 파이썬 3 버전만 데비안 버스터(Debian Buster, 더 최신의 데비안 배포판)에서 사용 가능합니다. 패키지는 `apt-get`으로 설치할 수 있습니다:
+
+```sh
+sudo apt-get install python3-sklearn python3-sklearn-lib python3-sklearn-doc
+```
+
+### 페도라(Fedora)
+
+페도라 패키지는 파이썬 3 버전을 위한 `python3-scikit-learn`이며, 페도라30(Fedora30)에서 유일하게 사용 가능한 패키지입니다. `dnf`로 설치할 수 있습니다:
+
+```sh
+sudo dnf install python3-scikit-learn
+```
+
+### 넷BSD(NetBSD)
+
+사이킷런은 [pkgsrc-wip](http://pkgsrc-wip.sourceforge.net/)으로 사용 가능합니다:
+
+[http://pkgsrc.se/math/py-scikit-learn](http://pkgsrc.se/math/py-scikit-learn)
+
+### 맥 OSX를 위한 맥포트(MacPorts)
+
+맥포트 패키지 이름은 `py<XY>-scikits-learn`이며, `XY`는 파이썬 버전을 나타냅니다. 다음 명령을 입력해 설치할 수 있습니다:
+
+```sh
+sudo port install py39-scikit-learn
+```
+
+### 모든 지원되는 플랫폼을 위한 아나콘다(Anaconda)와 엔쏘우트 배포 관리자(Enthought deployment manager)
+
+[아나콘다](https://www.anaconda.com/download)와 [엔쏘우트 배포 관리자](https://assets.enthought.com/downloads/)는 사이킷런을 포함한 과학적인 파이썬 라이브러리의 거대한 세트를 윈도우, 맥 OSX, 그리고 리눅스를 위해 담고 있습니다.
+
+아나콘다는 무료 배포판의 일부로 사이킷런을 제공합니다.
+
+### 인텔 콘다 채널(Intel conda channel)
+
+인텔은 사이킷런을 담은 전용 콘다 채널을 유지보수합니다.
+
+```sh
+conda install -c intel scikit-learn
+```
+
+이 버전의 사이킷런에는 일부 일반적인 추정기들에 대한 대체 솔버(solvers)가 있습니다. 이 솔버들은 DAAL C++ 라이브러리에서 왔고 다중 코어(multi-core) 인텔 CPU에 최적화되어 있습니다.
+
+솔버들이 기본적으로 사용 가능하지는 않음을 인지하고, 더 자세한 설명은 [daal4py](https://intelpython.github.io/daal4py/sklearn.html) 문서를 참고해주세요.
+
+표준 사이킷런 솔버와의 호환성(compatibility)은 [https://github.com/IntelPython/daal4py](https://github.com/IntelPython/daal4py)에 보고되어 있듯이 자동 연속 통합(continuous integration)을 통해 전체 사이킷런 테스트 수트(test suite)를 실행하며 확인되고 있습니다.
+
+### 윈도우를 위한 윈파이썬(WinPython)
+
+[윈파이썬](https://winpython.github.io/) 프로젝트는 사이킷런을 추가 플러그인(plugin)으로 배포합니다.
+
+## 문제 해결
+
+### 윈도우의 파일 경로 길이 제한으로 인한 오류
+
+만약 파이썬이 사용자 홈 디렉토리(home directory)의 `AppData` 폴더처럼 중첩된 위치에 설치되어 있다면 윈도우의 기본 경로 크기 제한에 도달하여 pip가 패키지 설치에 실패할 수 있습니다, 예를 들어:
+
+```sh
+C:\Users\username>C:\Users\username\AppData\Local\Microsoft\WindowsApps\python.exe -m pip install scikit-learn
+Collecting scikit-learn
+...
+Installing collected packages: scikit-learn
+ERROR: Could not install packages due to an EnvironmentError: [Errno 2] No such file or directory: 'C:\\Users\\username\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python37\\site-packages\\sklearn\\datasets\\tests\\data\\openml\\292\\api-v1-json-data-list-data_name-australian-limit-2-data_version-1-status-deactivated.json.gz'
+```
+
+이 경우 `regedit` 도구로 윈도우 레지스트리(registry) 안의 제한을 풀 수 있습니다:
+
+1. 윈도우 시작 메뉴(start menu)에서 "regedit"을 입력하고 `regedit`을 실행하세요.
+2. `Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem` 키(key)로 가세요.
+3. 그 키의 `LongPathsEnabled` 속성 값을 편집해 1로 설정하세요.
+4. (이전에 중단된 설치는 무시하고) 사이킷런을 다시 설치하세요.
+
+```sh
+pip install --exists-action=i scikit-learn
+```

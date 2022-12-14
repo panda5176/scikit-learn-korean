@@ -34,7 +34,7 @@ array([0, 1, 2])
 
 ### k-최근접 이웃 분류기
 
-가장 간단한 가능한 분류기는 [최근접 이웃(nearest neighbor)](https://en.wikipedia.org/wiki/K-nearest_neighbor_algorithm)입니다: 새로운 관측 `X_test`이 주어지면, 훈련 세트(training set)(즉 추정기를 훈련하기 위해 사용한 데이터)에서 가장 가까운 특성 벡터(feature vector)가 있는 관측값을 찾는 것입니다. (이 유형의 분류기에 대한 더 많은 정보를 원하신다면 온라인 사이킷런 문서의 [최근접 이웃 섹션](../../modules/neighbors)을 보세요.)
+가장 간단한 가능한 분류기는 [최근접 이웃(nearest neighbor)](https://en.wikipedia.org/wiki/K-nearest_neighbor_algorithm)입니다: 새로운 관측 `X_test`이 주어지면, 훈련 세트(training set, 즉 추정기를 훈련하기 위해 사용한 데이터)에서 가장 가까운 특성 벡터(feature vector)가 있는 관측값을 찾는 것입니다. (이 유형의 분류기에 대한 더 많은 정보를 원하신다면 온라인 사이킷런 문서의 [최근접 이웃 섹션](../../modules/neighbors)을 보세요.)
 
 **훈련 세트와 테스트 세트**
 

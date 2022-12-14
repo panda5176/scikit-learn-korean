@@ -256,7 +256,7 @@ Pipeline(...)
 0.8348...
 ```
 
-우리는 83.5% 정확도를 달성했습니다. (나이브 베이즈보다 약간 느리긴 하지만) 최고의 텍스트 분류 알고리즘 중 하나로 널리 여겨지는 선형 [서포트 벡터 머신(support vector machine)(SVM)](../../modules/svm)으로 더 좋아질 수 있는지 봅시다. 간단하게 다른 분류기 객체를 우리 파이프라인에 연결하여 학습기를 바꿀 수 있습니다:
+우리는 83.5% 정확도를 달성했습니다. (나이브 베이즈보다 약간 느리긴 하지만) 최고의 텍스트 분류 알고리즘 중 하나로 널리 여겨지는 선형 [서포트 벡터 머신(support vector machine, SVM)](../../modules/svm)으로 더 좋아질 수 있는지 봅시다. 간단하게 다른 분류기 객체를 우리 파이프라인에 연결하여 학습기를 바꿀 수 있습니다:
 
 ```python
 >>> from sklearn.linear_model import SGDClassifier
@@ -400,7 +400,7 @@ $ cp -r skeletons workspace
 
 ## 연습 3: CLI 텍스트 분류 유틸리티
 
-이전 연습들의 결과와 표준 라이브러리(standard library)의 `cPickle` 모듈을 사용하여, `stdin`에서 제공하는 몇몇 텍스트의 언어를 감지하고 만약 텍스트가 영어로 쓰였는지 극성(polarity)(양성(positive) 또는 음성(negative))을 추정하는 명령줄 유틸리티를 작성하세요.
+이전 연습들의 결과와 표준 라이브러리(standard library)의 `cPickle` 모듈을 사용하여, `stdin`에서 제공하는 몇몇 텍스트의 언어를 감지하고 만약 텍스트가 영어로 쓰였는지 극성(polarity, 양성(positive) 또는 음성(negative))을 추정하는 명령줄 유틸리티를 작성하세요.
 
 유틸리티가 예측에 대해 신뢰 수준(confidence level)을 제공할 수 있다면 보너스 점수입니다.
 

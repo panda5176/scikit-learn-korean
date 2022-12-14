@@ -22,7 +22,7 @@ RandomForestClassifier(random_state=0)
 
 `fit` 메서드는 보통 2개의 입력을 받습니다:
 
-- 표본 행렬(samples matrix)(또는 설계 행렬) [`X`](glossary#X). `X`의 크기는 보통 `(n_samples, n_features)`입니다, 즉 표본(samples)은 행을 나타내고 특성(features)은 열을 나타냅니다.
+- 표본 행렬(samples matrix, 또는 설계 행렬) [`X`](glossary#X). `X`의 크기는 보통 `(n_samples, n_features)`입니다, 즉 표본(samples)은 행을 나타내고 특성(features)은 열을 나타냅니다.
 - 목표값(target values) [`y`](glossary#y)는 회귀(regression) 작업을 위한 실수값들(real numbers)이나 분류(classification)를 위한 정수값(integers)들(또는 어떤 불연속(discrete) 값들의 집합)입니다. 비지도 학습(unsupervised learning) 작업을 위해서는, `y`를 지정할 필요가 없습니다. `y`는 보통 1차원 배열(1d array)이며 `i`번째 항목은 `X`의 `i`번째 표본(행)의 목표값에 대응합니다.
 
 보통 `X`와 `y` 둘다 numpy 배열이나 동등한 [유사-배열](glossary#유사-배열) 데이터 타입일 것으로 예상되며, 어떤 추정기는 희소 행렬(sparse matrix)과 같은 다른 형식들과 함께 작동할 수도 있습니다.

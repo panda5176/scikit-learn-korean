@@ -11,7 +11,7 @@
 
 ## 목차
 - [시작하기](getting_started) (원문: [Getting Started](https://scikit-learn.org/stable/getting_started.html))
-- *[설치](install) (원문: [Install](https://scikit-learn.org/stable/install.html))*
+- [설치](install) (원문: [Install](https://scikit-learn.org/stable/install.html))
 - [튜토리얼](tutorial) (원문: [Tutorial](https://scikit-learn.org/stable/tutorial/index.html))
 - *[사용자 안내서](user_guide) (원문: [User Guide](https://scikit-learn.org/stable/user_guide.html))*
 - *[예제](auto_examples) (원문: [Examples](https://scikit-learn.org/stable/auto_examples/index.html))*

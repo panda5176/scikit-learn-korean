@@ -73,7 +73,7 @@ KMeans(n_clusters=5, n_init=1)
 
 ### 연결 제약이 있는 군집화
 
-응집형 군집화와 함께라면, 연결 그래프(connectivity graph)를 제공하여 어떤 표본들이 함께 군집화될지 지정해줄 수 있습니다. 사이킷런의 그래프는 인접 행렬(adjacency matrix)로 표현됩니다. 가끔은, 희소 행렬(sparse matrix)이 사용됩니다. 예를 들어, 이미지를 군집화할 때 연결된 구역(regions)(가끔 연결 성분(connected components)이라고도 함)을 되찾고자 할 경우 유용할 수 있습니다.
+응집형 군집화와 함께라면, 연결 그래프(connectivity graph)를 제공하여 어떤 표본들이 함께 군집화될지 지정해줄 수 있습니다. 사이킷런의 그래프는 인접 행렬(adjacency matrix)로 표현됩니다. 가끔은, 희소 행렬(sparse matrix)이 사용됩니다. 예를 들어, 이미지를 군집화할 때 연결된 구역(regions, 가끔 연결 성분(connected components)이라고도 함)을 되찾고자 할 경우 유용할 수 있습니다.
 
 ![](https://scikit-learn.org/stable/_images/sphx_glr_plot_coin_ward_segmentation_001.png)
 
@@ -142,7 +142,7 @@ X가 다변량 데이터라면, 우리가 풀고자 하는 문제는 그걸 다�
 
 ### 주성분 분석: PCA
 
-[주성분 분석(principal component analysis)(PCA)](../../modules/decomposition#pca)은 신호(signal)의 최대 분산(variance)을 설명하는 성공적인 성분을 선택합니다.
+[주성분 분석(principal component analysis, PCA)](../../modules/decomposition#pca)은 신호(signal)의 최대 분산(variance)을 설명하는 성공적인 성분을 선택합니다.
 
 ![](https://scikit-learn.org/stable/_images/sphx_glr_plot_pca_3d_001.png) ![](https://scikit-learn.org/stable/_images/sphx_glr_plot_pca_3d_002.png)
 
@@ -173,7 +173,7 @@ PCA()
 
 ### 독립 성분 분석: ICA
 
-[독립 성분 분석(independent component analysis)(ICA)](../../modules/decomposition#ica)은 부하량이 독립 정보량(amount of independent information)의 최대값을 갖게끔 성분을 선택합니다. **비가우시안(non-Gaussian)** 독립 신호를 복원하는 것이 가능합니다:
+[독립 성분 분석(independent component analysis, ICA)](../../modules/decomposition#ica)은 부하량이 독립 정보량(amount of independent information)의 최대값을 갖게끔 성분을 선택합니다. **비가우시안(non-Gaussian)** 독립 신호를 복원하는 것이 가능합니다:
 
 ![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ica_blind_source_separation_001.png)
 
