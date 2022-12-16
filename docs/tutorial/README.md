@@ -26,15 +26,15 @@
 ### - [파이프라인 구축](text_analytics/working_with_text_data#파이프라인-구축)
 ### - [테스트 세트에 대한 성능 평가](text_analytics/working_with_text_data#테스트-세트에-대한-성능-평가)
 ### - [격자 탐색으로 매개변수 튜닝](text_analytics/working_with_text_data#격자-탐색으로-매개변수-튜닝)
-### - [연습 1: 언어 식별](text_analytics/working_with_text_data#연습-1:-언어-식별)
-### - [연습 2: 영화 후기 감성 분석](text_analytics/working_with_text_data#연습-2:-영화-후기-감성-분석)
-### - [연습 3: CLI 텍스트 분류 유틸리티](text_analytics/working_with_text_data#연습-3:-CLI-텍스트-분류-유틸리티)
+### - [연습 1: 언어 식별](text_analytics/working_with_text_data#연습-1-언어-식별)
+### - [연습 2: 영화 후기 감성 분석](text_analytics/working_with_text_data#연습-2-영화-후기-감성-분석)
+### - [연습 3: CLI 텍스트 분류 유틸리티](text_analytics/working_with_text_data#연습-3-CLI-텍스트-분류-유틸리티)
 ### - [여기서부터 어디로](text_analytics/working_with_text_data#여기서부터-어디로)
 
 ## [알맞은 추정기 선택](machine_learning_map)
 
 ## [외부 리소스, 비디오와 토크](../presentations)
 
-### - [과학적인 파이썬이 처음이신가요?](../presentations#과학적인-파이썬이-처음이신가요?)
+### - [과학적인 파이썬이 처음이신가요?](../presentations#과학적인-파이썬이-처음이신가요)
 ### - [외부 튜토리얼](../presentations#외부-튜토리얼)
 ### - [비디오](../presentations#비디오)
