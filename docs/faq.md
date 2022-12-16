@@ -70,7 +70,7 @@ GPU 지원을 추가하는 것에 대한 더 많은 정보를 [GPU 지원을 추
 사이킷런과 유사한 API의 구조화된 예측을 하는 두 프로젝트가 있습니다:
 
 - [파이스트럭트(pystruct)](https://pystruct.github.io/)는 일반적인 구조화된 학습을 처리합니다(대략적인 추론으로 임의적인 그래프 구조(graph structures)에 대한 SSVMs에 초점을 둡니다; 그래프 구조의 인스턴스(instance)로 표본의 개념을 정의합니다)
-- [시크런(seqlearn)][https://larsmans.github.io/seqlearn/]은 시퀀스(sequences)만 처리합니다(정확한 추론에 초점을 둡니다; HMMs가 있지만, 대부분 완전성을 위해서입니다; 특성 벡터(feature vector)를 표본으로 다루고 특성 벡터 간 의존성을 위해 오프셋 인코딩(offset encoding)을 사용합니다)
+- [시크런(seqlearn)](https://larsmans.github.io/seqlearn/)은 시퀀스(sequences)만 처리합니다(정확한 추론에 초점을 둡니다; HMMs가 있지만, 대부분 완전성을 위해서입니다; 특성 벡터(feature vector)를 표본으로 다루고 특성 벡터 간 의존성을 위해 오프셋 인코딩(offset encoding)을 사용합니다)
 
 ### 왜 사이킷런에서 HMMs를 제거하셨나요?
 
