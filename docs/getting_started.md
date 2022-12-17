@@ -91,7 +91,7 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
 
 모델을 어떤 데이터에 적합하는 것이 본 적 없는 데이터도 잘 예측하게끔 하는 것은 아닙니다. 이건 직접 평가되어야 합니다. 방금 [`train_test_split`](modules/generated/sklearn.model_selection.train_test_split#sklearn.model_selection.train_test_split) 도우미(helper)가 데이터셋을 훈련과 테스트 세트로 분할하는 것을 보았지만, `scikit-learn`은 모델 평가를 위한, 특히 [교차검증(cross-validation)](modules/cross_validation#교차검증(cross-validation))을 위한 많은 다른 도구들을 제공합니다.
 
-여기 [`cross_validate`](modules/generated/sklearn.model_selection.cross_validate#sklearn.model_selection.cross_validate) 도우미가 어떻게 5겹(5-fold) 교차검증 절차를 수행하는지 간략하게 보여드립니다. 수동으로 겹을 반복하고, 다른 데이터 분할 전략을 사용하고, 사용자가 직접 정의한 점수를 매기는 함수(custom scoring function)를 사용할 수도 있습니다. 자세한 내용은 우리의 [사용자 안내서(User Guide)](modules/cross_validation#교차검증(cross-validation))를 참고하세요:
+여기 [`cross_validate`](modules/generated/sklearn.model_selection.cross_validate#sklearn.model_selection.cross_validate) 도우미가 어떻게 5겹(5-fold) 교차검증 절차를 수행하는지 간략하게 보여드립니다. 수동으로 겹을 반복하고, 다른 데이터 분할 전략을 사용하고, 사용자가 직접 정의한 점수를 매기는 함수(custom scoring function)를 사용할 수도 있습니다. 자세한 내용은 우리의 [사용자 안내(User Guide)](modules/cross_validation#교차검증(cross-validation))를 참고하세요:
 
 ```python
 >>> from sklearn.datasets import make_regression
@@ -110,7 +110,7 @@ array([1., 1., 1., 1., 1.])
 
 모든 추정기는 조정할 수 있는 매개변수(parameter)를 가집니다(문헌에서 종종 초매개변수(hyper-parameter)라고도 합니다). 추정기의 일반화 능력(generalization power)은 종종 적은 매개변수에 의해 치명적으로 좌우됩니다. 예를 들어 [`RandomForestRegressor`](modules/generated/sklearn.ensemble.RandomForestRegressor#sklearn.ensemble.RandomForestRegressor)는 숲(forest)에서 나무(trees)의 수를 결정하는 `n_estimators` 매개변수를 가지고, 각 나무의 최대 깊이를 결정하는 `max_depth` 매개변수도 가집니다. 꽤나 자주, 이런 매개변수의 정확한 값은 당면한 데이터에 의존하기 때문에 명확하지가 않습니다.
 
-`Scikit-learn`은 자동으로 (교차검증을 통해) 자동으로 최고의 매개변수 조합을 찾는 도구를 제공합니다. 다음 예제에서는, [`RandomizedSearchCV`](modules/generated/sklearn.model_selection.RandomizedSearchCV.html#sklearn.model_selection.RandomizedSearchCV) 객체와 함께 랜덤 포레스트(random forest) 매개변수 공간을 무작위로 탐색합니다. 탐색이 끝나면, [`RandomizedSearchCV`](modules/generated/sklearn.model_selection.RandomizedSearchCV.html#sklearn.model_selection.RandomizedSearchCV)는 최고의 매개변수 세트로 적합된 [`RandomForestRegressor`](modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor)처럼 작동합니다. [사용자 안내서](modules/grid_search.html#격자-탐색(grid-search))를 더 읽어보세요:
+`Scikit-learn`은 자동으로 (교차검증을 통해) 자동으로 최고의 매개변수 조합을 찾는 도구를 제공합니다. 다음 예제에서는, [`RandomizedSearchCV`](modules/generated/sklearn.model_selection.RandomizedSearchCV.html#sklearn.model_selection.RandomizedSearchCV) 객체와 함께 랜덤 포레스트(random forest) 매개변수 공간을 무작위로 탐색합니다. 탐색이 끝나면, [`RandomizedSearchCV`](modules/generated/sklearn.model_selection.RandomizedSearchCV.html#sklearn.model_selection.RandomizedSearchCV)는 최고의 매개변수 세트로 적합된 [`RandomForestRegressor`](modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor)처럼 작동합니다. [사용자 안내](modules/grid_search.html#격자-탐색(grid-search))를 더 읽어보세요:
 
 ```python
 >>> from sklearn.datasets import fetch_california_housing
@@ -151,7 +151,7 @@ RandomizedSearchCV(estimator=RandomForestRegressor(random_state=0), n_iter=5,
 
 추정기 적합과 예측, 전처리 단계, 파이프라인, 교차검증 도구와 자동 초매개변수 탐색을 간략하게 다루어보았습니다. 이 안내서는 라이브러리의 일부 주요 기능들에 대한 개요를 제공하긴 하지만, `scikit-learn`에는 더 많은 것들이 있습니다!
 
-우리가 제공하는 모든 도구에 대한 자세한 설명은 [사용자 안내서](user_guide)를 참고하세요. [API 참조](modules/classes)에서는 공개 API의 완전한 목록을 찾아볼 수 있습니다.
+우리가 제공하는 모든 도구에 대한 자세한 설명은 [사용자 안내](user_guide)를 참고하세요. [API 참조](modules/classes)에서는 공개 API의 완전한 목록을 찾아볼 수 있습니다.
 
 또 다양한 상황에서 `scikit-learn`의 사용 방식을 묘사한 방대한 [예제](auto_examples)도 있습니다.
 
