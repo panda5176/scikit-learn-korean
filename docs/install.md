@@ -6,7 +6,7 @@
 
 - [최신 공식 릴리즈(official release)](최신-릴리즈-설치)을 설치하세요. 대부분 사용자들에게 최고의 접근법입니다. 안정된 버전과 대부분의 플랫폼(platforms)에서 사용 가능한 미리 빌드된 패키지들(pre-built packages)을 제공합니다.
 - 여러분의 [운영 체제(operating system)나 파이썬 배포판(Python distribution)](사이킷런-서드-파티-배포판)에 맞게 제공되는 사이킷런 버전을 설치하세요. 사이킷런을 배포하는 운영 체제나 파이썬 배포판을 가지고 계신 분들을 위한 빠른 선택지입니다. 최신 릴리즈 버전은 제공하지 않을 수도 있습니다.
-- [소스(source)에서 패키지를 빌드(build)합니다](../../developers/advanced_installation#install-bleeding-edge). 가장 최신의 기능들을 원하고 신제품 코드를 실행하는데 두려움이 없는 사용자들을 위해서는 최고입니다. 프로젝트에 기여하고 싶으신 사용자들에게도 필요합니다.
+- [소스(source)에서 패키지를 빌드(build)합니다](https://scikit-learn.org/stable/developers/advanced_installation.html#install-bleeding-edge). 가장 최신의 기능들을 원하고 신제품 코드를 실행하는데 두려움이 없는 사용자들을 위해서는 최고입니다. 프로젝트에 기여하고 싶으신 사용자들에게도 필요합니다.
 
 ## 최신 릴리즈 설치
 
