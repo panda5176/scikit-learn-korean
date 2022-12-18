@@ -180,7 +180,7 @@ $ python -c "import sklearn; sklearn.show_versions()"
 
 넘파이(NumPy)나 사이파이(SciPy)를 아직 설치하지 않았다면, 콘다나 pip로 설치할 수 있습니다. pip를 쓴다면, (라즈베리 파이(Raspberry Pi)에서의 리눅스처럼) 특정 구성의 운영 체제와 하드웨어(hardware)를 사용할 때, *바이너리 휠(binary wheels)*을 사용하는지와 넘파이와 사이파이가 소스에서 다시 컴파일(recompile)되지 않는지 확인하세요.
 
-사이킷런 도표화 기능(예시로 "plot_"으로 시작하는 함수나 "Display"로 끝나는 클래스 등)은 맷플롯립(Matplotlib)이 필요합니다. 예제는 맷플롯립이 필요하고 몇몇 예제는 사이킷이미지(scikit-image), 판다스(pandas), 또는 시본(seaborn)이 필요합니다. 사이킷런 의존 항목들의 최소 버전이 그 목적과 함께 아래에 나열되어 있습니다.
+사이킷런 플로팅(plotting) 기능(예시로 "plot_"으로 시작하는 함수나 "Display"로 끝나는 클래스 등)은 맷플롯립(Matplotlib)이 필요합니다. 예제는 맷플롯립이 필요하고 몇몇 예제는 사이킷이미지(scikit-image), 판다스(pandas), 또는 씨본(seaborn)이 필요합니다. 사이킷런 의존 항목들의 최소 버전이 그 목적과 함께 아래에 나열되어 있습니다.
 
 |의존 항목|최소 버전|목적|
 |---|---|---|

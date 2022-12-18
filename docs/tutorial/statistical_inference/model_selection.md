@@ -106,7 +106,7 @@ array([0.96578289, 0.92708922, 0.96681476, 0.96362897, 0.93192644])
 
 **연습**
 
-숫자(digits) 데이터셋에서, [`SVC`](../../modules/generated/sklearn.svm.SVC) 추정기가 매개변수 `C`의 함수로 된 선형 커널(linear kernel)이 있을 때 교차-검증 점수 도표를 그리세요(1부터 10까지의 로그 격자점(logarithmic grid of points)를 사용하세요).
+숫자(digits) 데이터셋에서, [`SVC`](../../modules/generated/sklearn.svm.SVC) 추정기가 매개변수 `C`의 함수로 된 선형 커널(linear kernel)이 있을 때 교차-검증 점수 플롯(plot)을 그리세요(1부터 10까지의 로그 격자점(logarithmic grid of points)를 사용하세요).
 
 ```python
 import numpy as np

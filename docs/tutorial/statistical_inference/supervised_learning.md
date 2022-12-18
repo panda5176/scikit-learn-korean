@@ -267,7 +267,7 @@ X_digits = X_digits / X_digits.max()
 
 **예제:**
 
-- [붓꽃 데이터셋에서의 여러 SVM 분류기 도표화](../../auto_examples/svm/plot_iris_svc)
+- [붓꽃 데이터셋에서의 여러 SVM 분류기 플로팅(plot)](../../auto_examples/svm/plot_iris_svc)
 
 SVM은 회귀에서도 -[SVR(서포트 벡터 회귀)](../../modules/generated/sklearn.svm.SVR)(Support Vector Regression), 분류에서도 -[SVC(서포트 벡터 분류)](../../modules/generated/sklearn.svm.SVC)(Support Vector Classification)- 사용할 수 있습니다.
 

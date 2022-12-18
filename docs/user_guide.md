@@ -183,17 +183,17 @@
 
 ### [3.3. 측정과 채점: 예측 품질 수량화](modules/model_evaluation)
 
-### [3.4. 검증 곡선: 모델 평가를 위한 점수 도표화](modules/learning_curve)
+### [3.4. 검증 곡선: 모델 평가를 위한 점수 플로팅](modules/learning_curve)
 
 ## [4. 검사](inspection)
 
-### [4.1. 부분 의존도와 개별 조건부 기대치 도표](modules/partial_dependence)
+### [4.1. 부분 의존도와 개별 조건부 기대치 플롯](modules/partial_dependence)
 
 ### [4.2. 순열 특성 중요도](modules/permutation_importance)
 
 ## [5. 시각화](visualizations)
 
-### [5.1. 사용 가능한 도표화 유틸리티](visualizations#사용-가능한-도표화-유틸리티)
+### [5.1. 사용 가능한 플로팅 유틸리티](visualizations#사용-가능한-플로팅-유틸리티)
 
 ## [6. 데이터셋 변환](data_transforms)
 

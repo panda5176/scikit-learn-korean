@@ -34,7 +34,7 @@ search.fit(X_digits, y_digits)
 print("Best parameter (CV score=%0.3f):" % search.best_score_)
 print(search.best_params_)
 
-# PCA 스펙트럼(spectrum)을 도표화합니다
+# PCA 스펙트럼(spectrum)을 플로팅(plot)합니다
 pca.fit(X_digits)
 
 fig, (ax0, ax1) = plt.subplots(nrows=2, sharex=True, figsize=(6, 6))
@@ -92,7 +92,7 @@ from sklearn.utils.fixes import loguniform
 
 lfw_people = fetch_lfw_people(min_faces_per_person=70, resize=0.4)
 
-# (도표화를 위한) 형태(shape)를 찾기 위해 이미지 배열을 들여다봅니다
+# (플로팅을 위한) 형태(shape)를 찾기 위해 이미지 배열을 들여다봅니다
 n_samples, h, w = lfw_people.images.shape
 
 # 기계 학습을 위해 2개 데이터를 직접적으로 사용합니다 (상대적인 픽셀
@@ -195,7 +195,7 @@ def plot_gallery(images, titles, h, w, n_row=3, n_col=4):
 
 
 # %%
-# 테스트 세트 부분에 대한 예측 결과를 도표화합니다
+# 테스트 세트 부분에 대한 예측 결과를 플로팅합니다
 
 
 def title(y_pred, y_test, target_names, i):
@@ -210,7 +210,7 @@ prediction_titles = [
 
 plot_gallery(X_test, prediction_titles, h, w)
 # %%
-# 가장 유의한(significative) 고유얼굴의 화랑(gallery)을 도표화합니다
+# 가장 유의한(significative) 고유얼굴의 화랑(gallery)을 플로팅합니다
 
 eigenface_titles = ["eigenface %d" % i for i in range(eigenfaces.shape[0])]
 plot_gallery(eigenfaces, eigenface_titles, h, w)
