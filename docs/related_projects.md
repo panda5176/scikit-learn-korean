@@ -118,7 +118,7 @@
 
 - [Pandas](https://pandas.pydata.org/) 이종(heterogeneous) 및 열(columnar) 데이터, 관계형 쿼리, 시계열과 기초 통계 작업을 위한 도구입니다.
 - [statsmodels](https://www.statsmodels.org/) 통계 모델 추론과 분석입니다. 사이킷런에 비해 예측은 덜 집중하고 통계 검정(tests)에 초점을 더 맞춥니다.
-- [PyMC](https://pymc-devs.github.io/pymc/) 베이지안(Bayesian) 통계 모데로가 적합 알고리즘입니다.
+- [PyMC](https://pymc-devs.github.io/pymc/) 베이지안(Bayesian) 통계 모델과 적합 알고리즘입니다.
 - [Seaborn](https://stanford.edu/~mwaskom/software/seaborn/) 맷플롯립(matplotlib)에 기반한 시각화 라이브러리입니다. 매력적인 통계 그래픽을 그리기 위한 고수준 인터페이스를 제공합니다.
 - [scikit-survival](https://scikit-survival.readthedocs.io/) (생존 분석(survival analysis)이라고도 하는) 중도절단된(censored) 시간 이벤트(time-to-event) 데이터에서 학습하는 모델을 구현한 라이브러리입니다. 모델은 사이킷런과 완벽하게 호환됩니다.
 
@@ -144,7 +144,7 @@
 
 번역의 목적은 영어가 아닌 언어들로 쉽게 읽고 이해하는 것입니다. 이는 영어를 이해하지 못하거나 해석에 의문이 드는 사람들을 돕는 것을 목적으로 합니다. 또한, 어떤 사람들은 문서를 그들의 모국어로 읽기를 선호하지만, 공식 문서는 영어 문서뿐이라는 점을 명심해주세요 [[1]](#1).
 
-그러한 번역의 노력은 공동체 주도적(community initiatives)이며 저희는 그것에 대한 어떠한 통제권도 없습니다. 만약 여러분이 번역에 기여하거나 문제점을 보고하고 싶으시다면, 번역문의 저자들에게 연락해주세요. 배포를 개선하고 공동체적 노력을 촉진하기 위해 일부 사용 가능한 번역문들을 여기에 링크해두었습니다.
+그러한 번역의 노력은 공동체 주도적(community initiatives)이며 저희는 그에 대한 어떠한 통제권도 없습니다. 만약 여러분이 번역에 기여하거나 문제점을 보고하고 싶으시다면, 번역문의 저자들에게 연락해주세요. 배포를 개선하고 공동체적 노력을 촉진하기 위해 일부 사용 가능한 번역문들을 여기에 링크해두었습니다.
 
 - [중국어 번역](https://sklearn.apachecn.org/)([소스](https://github.com/apachecn/sklearn-doc-zh))
 - [페르시아어 번역](https://sklearn.ir/)([소스](https://github.com/mehrdad-dev/scikit-learn))
