@@ -18,4 +18,4 @@
 - [외부 리소스, 비디오와 토크](presentations) (원문: [External Resources, Videos and Talks](https://scikit-learn.org/stable/presentations.html))
 - *[용어 사전](glossary) (원문: [Glossary](https://scikit-learn.org/stable/glossary.html))*
 - [자주 묻는 질문](faq) (원문: [FAQ](https://scikit-learn.org/stable/faq.html))
-- *[관련 프로젝트](related_projects) (원문: [Related packages](https://scikit-learn.org/stable/related_projects.html))*
+- [관련 프로젝트](related_projects) (원문: [Related packages](https://scikit-learn.org/stable/related_projects.html))
