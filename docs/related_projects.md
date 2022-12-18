@@ -150,5 +150,5 @@
 - [페르시아어 번역](https://sklearn.ir/)([소스](https://github.com/mehrdad-dev/scikit-learn))
 - [스페인어 번역](https://qu4nt.github.io/sklearn-doc-es/)([소스](https://github.com/qu4nt/sklearn-doc-es))
 
-###### [1]
+###### [1]  
 [리눅스 문서 면책 조항(linux documentation Disclaimer)](https://www.kernel.org/doc/html/latest/translations/index.html#disclaimer)을 따름
