@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://panda5176.github.io/scikit-learn-korean/sitemap.xml
