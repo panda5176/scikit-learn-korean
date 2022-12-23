@@ -6,12 +6,6 @@ layout: null
   {% for page in site.pages %}
     <url>
       <loc>{{ site.url }}{{ page.url }}</loc>
-      {% if page.lastmod == null %}
-        <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
-      {% else %}
-        <lastmod>{{ page.lastmod | date_to_xmlschema }}</lastmod>
-      {% endif %}
-
       {% if page.sitemap.changefreq == null %}
         <changefreq>weekly</changefreq>
       {% else %}
@@ -19,7 +13,7 @@ layout: null
       {% endif %}
 
       {% if page.sitemap.priority == null %}
-          <priority>0.5</priority>
+        <priority>0.5</priority>
       {% else %}
         <priority>{{ page.sitemap.priority }}</priority>
       {% endif %}
