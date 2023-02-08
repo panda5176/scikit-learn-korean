@@ -14,7 +14,7 @@ $\hat{y}(w, x) = w_0 + w_1 x_1 + ... + w_p x_p$
 
 [`LinearRegression`](generated/sklearn.linear_model.LinearRegression)은 데이터셋의 관측된 목표값과 선형 근사(linear approximation)로 예측된 목표값 사이의 잔차제곱합(residual sum of squares)을 최소화하면서, 계수(coefficients) $w = (w_1, ..., w_p)$로 선형 모델을 적합합니다. 수학적으로 이러한 형식의 문제를 해결합니다:
 
-$\min_{w} || X w - y||_2^2$
+$ \min_{w} || X w - y||_2^2 $
 
 ![](https://scikit-learn.org/stable/_images/sphx_glr_plot_ols_001.png)
 
